@@ -38,14 +38,12 @@
   <div class="wrap">
     <div class="form-shell">
       <script src="https://app.aifirstmove.com/forms-embed.js" data-form="z1m1wem5" data-theme="light" data-accent="#0B2243" async></script>
-      <noscript><p style="padding:16px">This form needs JavaScript. You can also email us at info@aifirstmove.com.</p></noscript>
+      <noscript><p style="padding:16px">This form needs JavaScript. You can also email us at <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>.</p></noscript>
     </div>
   </div>
   <div class="wrap prose">
     <h2>Prefer email?</h2>
-    <p>Write to us at <strong id="email-address">info@aifirstmove.com</strong>
-      <button type="button" id="copy-email" class="btn btn-ghost" style="padding:6px 14px;font-size:.9rem;margin-left:8px">Copy address</button>
-    </p>
+    <p>Write to <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>.</p>
     <p class="updated">What you send is used to reply to your inquiry. See our <a href="../privacy/">Privacy Policy</a> for details.</p>
   </div>
 
@@ -72,24 +70,6 @@
   </div>
 </footer>
 
-<script>
-(function () {
-  var btn = document.getElementById("copy-email");
-  var addr = document.getElementById("email-address");
-  if (!btn || !addr) return;
-  btn.addEventListener("click", function () {
-    var text = addr.textContent.trim();
-    function done() { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy address"; }, 2000); }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { window.prompt("Copy this address:", text); });
-    } else {
-      var range = document.createRange(); range.selectNodeContents(addr);
-      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
-      try { document.execCommand("copy"); done(); } catch (e) {}
-    }
-  });
-})();
-</script>
-
+<script src="../assets/site.js" defer></script>
 </body>
 </html>
