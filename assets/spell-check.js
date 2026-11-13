@@ -189,7 +189,7 @@
     if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { offerMsg.textContent = ERR.name_email; return; }
     var s = state(), btn = $("sc-offer-btn");
     btn.disabled = true; offerMsg.textContent = "One moment…";
-    post("/lead", { name: name, email: email, tokens: s.tokens || [] }).then(function (data) {
+    post("/lead", { name: name, email: email, optin: !!($("sc-optin") && $("sc-optin").checked), tokens: s.tokens || [] }).then(function (data) {
       btn.disabled = false;
       if (!data || !data.ok) { offerMsg.textContent = ERR[data && data.error] || ERR.server; return; }
       s = state(); s.lead = { name: name, email: email }; s.day = today(); s.used = FREE; s.tokens = []; s.dismissed = 0; save(s);
