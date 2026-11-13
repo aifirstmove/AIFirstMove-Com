@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spell Check | AI First Move</title>
+<meta name="description" content="Type or say one word in any language. See the correct spelling and what it means. A free AI tool from AI First Move.">
+<link rel="canonical" href="https://aifirstmove.com/spell-check/">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="AI First Move home">
+      <img src="../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../">Home</a>
+      <a href="../blog/">Blog</a>
+      <a href="../spell-check/" aria-current="page">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="wrap page-head">
+    <p class="eyebrow">Free AI tool</p>
+    <h1>Spell check any word</h1>
+    <p class="lede">Type or say one word, in any language. You get the correct spelling and what it means.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="tool">
+      <p class="sc-hello" id="sc-hello" hidden></p>
+
+      <form class="sc-form" id="sc-form" novalidate>
+        <label class="skip" for="sc-word">Word to check</label>
+        <input class="sc-input" id="sc-word" name="word" type="text" placeholder="Enter one word" maxlength="40" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search" required>
+        <button class="sc-mic" id="sc-mic" type="button" aria-label="Say the word" aria-pressed="false" hidden>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+        </button>
+        <button class="btn btn-primary" id="sc-check" type="submit">Check spelling</button>
+      </form>
+
+      <div class="sc-voice-row" id="sc-voice-row" hidden>
+        <label for="sc-lang">Language you will speak:</label>
+        <select id="sc-lang"></select>
+      </div>
+
+      <p class="sc-meter" id="sc-meter"></p>
+      <p class="sc-status" id="sc-status" role="status" aria-live="polite"></p>
+      <div class="sc-results" id="sc-results" aria-live="polite"></div>
+
+      <section class="sc-offer" id="sc-offer" aria-labelledby="sc-offer-title" hidden>
+        <h2 id="sc-offer-title">Want 3 more checks?</h2>
+        <p>Tell us your name and email and you can check 3 more words today, and 6 words on any day after that.</p>
+        <form id="sc-offer-form" novalidate>
+          <div class="sc-fields">
+            <div><label for="sc-name">Name</label><input id="sc-name" name="name" type="text" autocomplete="name" maxlength="100" required></div>
+            <div><label for="sc-email">Email</label><input id="sc-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+          </div>
+          <div class="sc-offer-actions">
+            <button class="btn btn-primary" id="sc-offer-btn" type="submit">Get 3 more checks</button>
+            <button class="sc-link" id="sc-dismiss" type="button">No thanks</button>
+          </div>
+          <p class="sc-offer-msg" id="sc-offer-msg" role="status" aria-live="polite"></p>
+          <p class="sc-small">We save your name and email with a count of the words you check. Your name and email are also remembered in this browser. See our <a href="../privacy/">Privacy Policy</a>.</p>
+        </form>
+      </section>
+
+      <p class="sc-notice" id="sc-notice" hidden>Tries reset in 2 days. <button class="sc-link" id="sc-reopen" type="button">Get 3 more checks now</button></p>
+
+      <p class="sc-about">Each word is sent to an AI service to produce the spelling and definition. Voice entry and the Listen button use your browser's own speech features. Voice entry works in Chrome, Edge and Safari.</p>
+      <noscript><p>This tool needs JavaScript.</p></noscript>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../about/">About Us</a></li>
+      <li><a href="../contact/">Contact Us</a></li>
+      <li><a href="../privacy/">Privacy Policy</a></li>
+      <li><a href="../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../assets/site.js" defer></script>
+<script src="../assets/spell-check.js" defer></script>
+</body>
+</html>
