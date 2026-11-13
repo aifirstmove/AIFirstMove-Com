@@ -161,3 +161,52 @@ section { padding: 72px 0; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* Spell Check tool */
+.tool { max-width: 720px; padding-bottom: 72px; }
+.sc-hello { font-family: var(--font-head); font-weight: 600; color: var(--gold-deep); margin-bottom: 10px; }
+.sc-form { display: flex; gap: 10px; align-items: stretch; }
+.sc-input { flex: 1 1 auto; min-width: 0; font: inherit; font-size: 1.25rem; color: var(--navy); padding: 14px 18px; border: 2px solid var(--navy); border-radius: 999px; background: var(--white); }
+.sc-input::placeholder { color: #7C8AA3; }
+.sc-input:disabled { border-color: var(--line); background: #F6F8FB; }
+.sc-mic { flex: 0 0 56px; width: 56px; height: 56px; align-self: center; border-radius: 50%; border: 2px solid var(--navy); background: var(--white); color: var(--navy); cursor: pointer; display: grid; place-items: center; }
+.sc-mic:hover { background: var(--gold-tint); }
+.sc-mic.is-on { background: var(--gold); border-color: var(--gold); }
+.sc-form .btn { cursor: pointer; font-size: 1rem; }
+.sc-form .btn:disabled, .sc-mic:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.sc-voice-row { margin-top: 12px; font-size: .95rem; color: var(--navy-soft); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.sc-voice-row select { font: inherit; color: var(--navy); padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+.sc-meter { margin: 14px 0 0; font-size: .95rem; color: var(--navy-soft); }
+.sc-status { min-height: 1.65em; margin: 10px 0 0; color: var(--navy-soft); }
+.sc-status.is-error { color: #9B2C1F; }
+.sc-status.is-ok { color: var(--gold-deep); font-weight: 600; }
+.sc-results { margin-top: 8px; }
+.sc-result-label { font-family: var(--font-head); font-weight: 600; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); margin: 0 0 10px; }
+.sc-card { border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 12px; background: var(--white); }
+.sc-spelling { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 0 0 6px; overflow-wrap: anywhere; }
+.sc-definition { margin: 0 0 12px; color: var(--navy-soft); }
+.sc-listen { font: inherit; font-family: var(--font-head); font-weight: 600; font-size: .9rem; color: var(--navy); background: transparent; border: 1px solid var(--navy); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+.sc-listen:hover { background: var(--gold-tint); }
+.sc-none, .sc-foot { color: var(--navy-soft); font-size: .92rem; }
+.sc-offer { margin-top: 24px; background: var(--gold-tint); border: 1px solid #EBD9BD; border-radius: 22px; padding: 26px; }
+.sc-offer h2 { font-size: 1.4rem; margin-bottom: .3em; }
+.sc-offer p { color: var(--navy-soft); }
+.sc-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.sc-fields label { display: block; font-family: var(--font-head); font-weight: 600; font-size: .85rem; margin-bottom: 4px; }
+.sc-fields input { width: 100%; font: inherit; color: var(--navy); padding: 12px 14px; border: 1px solid #C9D3E3; border-radius: 10px; background: var(--white); }
+.sc-offer-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.sc-offer-actions .btn { cursor: pointer; }
+.sc-link { font: inherit; color: var(--navy); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.sc-offer-msg { min-height: 1.4em; margin: 10px 0 0; color: #9B2C1F; font-size: .95rem; }
+.sc-small { font-size: .88rem; margin: 12px 0 0; }
+.sc-notice { margin-top: 24px; border: 1px dashed var(--line); border-radius: var(--radius); padding: 18px 22px; color: var(--navy-soft); }
+.sc-about { margin-top: 40px; font-size: .95rem; color: var(--navy-soft); }
+@media (max-width: 640px) {
+  .sc-form { flex-wrap: wrap; }
+  .sc-input { flex: 1 1 0; }
+  .sc-form .btn { flex: 1 1 100%; }
+  .sc-fields { grid-template-columns: 1fr; }
+  .nav { gap: 2px; }
+  .nav a { padding: 10px 8px; font-size: .9rem; white-space: nowrap; }
+  .brand span { letter-spacing: .04em; }
+}
