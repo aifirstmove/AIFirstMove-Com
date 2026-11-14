@@ -63,7 +63,7 @@
   /* ---------- the lookup ---------- */
   var MOCK = {
     recieve: { language: "English", language_code: "en", results: [{ spelling: "receive", definition: "To get or be given something." }] },
-    nesesario: { language: "Spanish", language_code: "es", results: [{ spelling: "necesario", definition: "Que hace falta o es indispensable para algo." }] },
+    nesesario: { language: "Spanish", language_code: "es", results: [{ spelling: "necesario", definition: "Que hace falta o es indispensable para algo.", local_word: "necessary", local_definition: "Needed or essential for something." }] },
     desert: { language: "English", language_code: "en", results: [{ spelling: "desert", definition: "A dry area of land with very little rain." }, { spelling: "dessert", definition: "A sweet dish eaten at the end of a meal." }] }
   };
   function post(path, body) {
@@ -89,6 +89,15 @@
     server: "Something went wrong on our side. Please try again."
   };
 
+  /* The visitor's own language, for the optional translation of a foreign word. */
+  var navLang = navigator.language || "en";
+  function base(code) { return String(code || "").toLowerCase().split("-")[0]; }
+  function differs(code) { return !!base(code) && base(code) !== base(navLang); }
+  function navName() {
+    try { var n = new Intl.DisplayNames([navLang], { type: "language" }).of(base(navLang)); return n.charAt(0).toUpperCase() + n.slice(1); }
+    catch (e) { return "my language"; }
+  }
+
   function render(word, data) {
     results.textContent = "";
     if (!data.valid || !data.results.length) {
@@ -103,10 +112,21 @@
       var h = el("h2", "sc-spelling", r.spelling); if (data.language_code) h.lang = data.language_code;
       var d = el("p", "sc-definition", r.definition); if (data.language_code) d.lang = data.language_code;
       card.appendChild(h); card.appendChild(d);
+      var local = null;
+      if (r.local_definition && differs(data.language_code)) {
+        local = el("p", "sc-definition", (r.local_word ? r.local_word + ": " : "") + r.local_definition);
+        local.lang = navLang; local.hidden = true;
+        card.appendChild(local);
+      }
       if ("speechSynthesis" in window) {
         var b = el("button", "sc-listen", "Listen"); b.type = "button";
         b.addEventListener("click", function () { speak(r.spelling + ". " + r.definition, data.language_code); });
         card.appendChild(b);
+      }
+      if (local) {
+        var showText = "Show in " + navName(), t = el("button", "sc-listen", showText); t.type = "button"; t.setAttribute("aria-expanded", "false");
+        t.addEventListener("click", function () { local.hidden = !local.hidden; t.textContent = local.hidden ? showText : "Hide " + navName(); t.setAttribute("aria-expanded", local.hidden ? "false" : "true"); });
+        card.appendChild(document.createTextNode(" ")); card.appendChild(t);
       }
       results.appendChild(card);
     });
