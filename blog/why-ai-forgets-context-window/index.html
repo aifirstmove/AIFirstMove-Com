@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why AI forgets what you told it: the context window in plain English | AI First Move</title>
+<meta name="description" content="AI seems to forget because it can only see a fixed amount of text at once, called the context window. What that means and five habits that keep it on track.">
+<link rel="canonical" href="https://aifirstmove.com/blog/why-ai-forgets-context-window/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why AI forgets what you told it: the context window in plain English">
+<meta property="og:description" content="AI seems to forget because it can only see a fixed amount of text at once, called the context window. What that means and five habits that keep it on track.">
+<meta property="og:url" content="https://aifirstmove.com/blog/why-ai-forgets-context-window/">
+<meta property="og:image" content="https://aifirstmove.com/assets/blog/why-ai-forgets-context-window.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why AI forgets what you told it: the context window in plain English", "description": "AI seems to forget because it can only see a fixed amount of text at once, called the context window. What that means and five habits that keep it on track.", "image": "https://aifirstmove.com/assets/blog/why-ai-forgets-context-window.png", "datePublished": "2026-11-16", "dateModified": "2026-11-16", "author": {"@type": "Organization", "name": "AI First Move", "url": "https://aifirstmove.com/"}, "publisher": {"@type": "Organization", "name": "AI First Move", "logo": {"@type": "ImageObject", "url": "https://aifirstmove.com/assets/logo.png"}}, "mainEntityOfPage": "https://aifirstmove.com/blog/why-ai-forgets-context-window/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="AI First Move home">
+      <img src="../../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../blog/" aria-current="page">Blog</a>
+      <a href="../../glossary/">Glossary</a>
+      <a href="../../spell-check/">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article>
+  <div class="wrap post-head">
+    <p class="eyebrow">Explainer</p>
+    <h1>Why AI forgets what you told it: the context window in plain English</h1>
+    <p class="post-meta">By AI First Move · <time datetime="2026-11-16">November 16, 2026</time> · <a href="../../blog/">All articles</a></p>
+    <img class="post-hero" src="../../assets/blog/why-ai-forgets-context-window.png" alt="Overhead view of a workbench covered edge to edge with blank cards, with a few cards fallen off one end onto the floor" width="1536" height="864">
+  </div>
+  <div class="wrap post-body">
+<h2>The short answer</h2>
+
+<p>AI doesn't actually forget, at least not in the way you'd expect. It simply can no longer see your earlier message. Every AI chat runs inside a fixed-size container called a <a class="term" href="../../glossary/#context-window">context window</a>. When your conversation grows too long, older content gets pushed out of that container. The AI isn't losing its mind; it's just running out of room.</p>
+
+<h2>Key takeaways</h2>
+
+<ul>
+ <li>A context window is the total amount of text, your messages plus the AI's responses, that an AI model can "see" at one time during a conversation.</li>
+ <li><a class="term" href="../../glossary/#token">Tokens</a> are the units AI uses to measure text; one token is roughly three-quarters of a word in English.<sup>[1]</sup></li>
+ <li>When a conversation exceeds the context window, the oldest content is dropped or summarized first, meaning instructions you gave at the start of a long thread may quietly disappear.<sup>[1]</sup></li>
+ <li>Even inside a large context window, AI models tend to pay less attention to information buried in the middle of a very long conversation than to content near the top or bottom.<sup>[4]</sup></li>
+ <li>Repeating key instructions at the start of a message, or starting a fresh chat for new tasks, are two reliable ways to avoid context-related confusion.</li>
+</ul>
+
+<h2>What a context window actually is</h2>
+
+<p>A context window is the "working space" an AI model reads every time it generates a response. Think of it like a whiteboard. You can write things on it, the AI reads the whole board, and then it writes its answer. When the board fills up, old writing gets erased from the top to make room. It isn't saved or archived. It's gone.</p>
+
+<p>Your entire conversation, every question you've typed and every answer the AI has given, lives on that whiteboard. And the whiteboard has a size limit. Once you hit it, the AI doesn't see the erased content anymore, even if it was an instruction you wrote ten minutes ago. That's why a long customer-service script you pasted at the beginning of a session might seem forgotten by message twenty.</p>
+
+<p>This is different from your own memory, which is more like a notebook. You can flip back to page one anytime. AI can't flip back; it only reads the current whiteboard.</p>
+
+<h2>What tokens are and why they're the unit of measurement</h2>
+
+<p>A <strong>token</strong> is a small chunk of text: not a word, not a character, but something in between. One token is roughly three-quarters of a word.<sup>[1]</sup> By that rule, a 150-word email comes to about 200 tokens.</p>
+
+<p>AI models measure context window size in tokens, not words or pages. Window sizes vary a lot by product and plan. As of November 16, 2026, the largest windows on the main models are listed at about one million tokens,<sup>[2]</sup> while one free consumer plan is listed at 32,000.<sup>[3]</sup> Big, but not infinite. And remember: every response the AI sends back also eats into that same window. You're not the only one writing on the whiteboard.</p>
+
+<p>Why does this matter for your business? Because you might paste in a long product catalog, a customer complaint thread, and your brand voice guidelines, then ask the AI a question. If those documents together push past the window limit, part of that material gets cut. You may not get a warning. The AI just works with what fits.</p>
+
+<h3>A rough sense of scale</h3>
+
+<p>These comparisons give you a working feel for token counts. They are worked out from the three-quarters rule above, so treat them as estimates. No memorization needed, just a mental anchor when you're deciding how much to paste into a chat.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>Content type</th>
+ <th>Approximate token count</th>
+ <th>What that means in practice</th>
+ </tr>
+ <tr>
+ <td>One short email (150 words)</td>
+ <td>About 200 tokens</td>
+ <td>Barely registers; paste as many as you need</td>
+ </tr>
+ <tr>
+ <td>One page of a contract (400 words)</td>
+ <td>About 550 tokens</td>
+ <td>Fine on its own; watch the total when combining documents</td>
+ </tr>
+ <tr>
+ <td>A short employee handbook (5,000 words)</td>
+ <td>About 7,000 tokens</td>
+ <td>Takes up a noticeable slice of a smaller window</td>
+ </tr>
+ <tr>
+ <td>A long meeting transcript (12,000 words)</td>
+ <td>About 16,000 tokens</td>
+ <td>Half of a 32,000-token window before you've asked anything</td>
+ </tr>
+ <tr>
+ <td>A 50,000-word product database</td>
+ <td>About 67,000 tokens</td>
+ <td>More than a 32,000-token window can hold; needs a plan with a larger one</td>
+ </tr>
+</table>
+</div>
+
+<h2>Why longer conversations cause the most trouble</h2>
+
+<p>Short sessions are rarely a problem. You ask, the AI answers, done. The issue shows up in long working sessions, say a 45-minute back-and-forth where you're refining a sales proposal. Early in that session you told the AI: "Always write in a friendly, casual tone. Never use the word 'cheap.'" Twenty messages later, the AI starts sounding stiff and drops "cheap" into a sentence. Your instruction fell off the whiteboard.</p>
+
+<p>The fix is simple: repeat critical instructions at the top of a new message, or start a fresh chat for a new task. Neither approach is elegant, but both are effective. Starting fresh is usually the cleaner option.</p>
+
+<h3>The "lost in the middle" problem</h3>
+
+<p>Researchers at Stanford University, UC Berkeley and Samaya AI published a 2023 study showing that AI language models did noticeably worse at using information placed in the middle of a long context than information at the very beginning or very end.<sup>[4]</sup> The effect takes its name from the paper's title: "lost in the middle."</p>
+
+<p>What that means for you: if you put your most important instruction somewhere in the middle of a long <a class="term" href="../../glossary/#prompt">prompt</a>, the AI may give it less weight, even if the window hasn't been exceeded. Placement matters. Keep your key instructions at the top. Put your reference material below them, not above.</p>
+
+<p>A big context window doesn't equal perfect recall.</p>
+
+<h2>Not all AI tools handle this the same way</h2>
+
+<p>Different AI products manage context in different ways. Some keep a memory across sessions; others reset completely when you start a new chat. Some tools let you save standing instructions (often called custom instructions) that are placed at the top of every exchange. That's one of the most practical features to look for in a daily-use AI tool.</p>
+
+<p>Several major AI platforms now offer memory or saved-instructions features, but the specifics change with updates. Before you build a workflow around any AI tool's memory, test it. Start a new chat, give the AI a distinctive instruction, close and reopen the session, and see if it remembers. If it doesn't, you need a workaround: a saved prompt template, saved instructions, or a habit of pasting your key context at the start of every session.</p>
+
+<h3>The difference between memory and context</h3>
+
+<p>These two words get used interchangeably, but they mean different things in AI products. <a class="term" href="../../glossary/#context">Context</a> is what the AI reads right now, in this session. <a class="term" href="../../glossary/#memory">Memory</a> is a separate feature, available in some tools, that stores facts about you between sessions and adds them to future context automatically.</p>
+
+<p>Memory is a convenience layer on top of context. It doesn't change the whiteboard limit; it just pre-fills part of the whiteboard for you. And because it pre-fills, it uses up tokens before you type a single word.</p>
+
+<h2>Context hygiene: five habits that actually help</h2>
+
+<p>Context hygiene means managing what goes into your conversation window so the AI always has what it needs and nothing unnecessary crowding it out. Five habits that work in practice:</p>
+
+<ul>
+ <li><strong>Open a fresh chat for each new task.</strong> Carrying over a 30-message thread into a new project is a quick way to confuse the AI with stale context from something unrelated.</li>
+ <li><strong>Put your key instructions first, every time.</strong> Before you paste any document or describe a task, write your tone, format, and any hard rules.</li>
+ <li><strong>Trim what you paste.</strong> If you need the AI to review one clause in a contract, paste that clause, not the whole contract. Shorter input leaves more room for the answer.</li>
+ <li><strong>Summarize long threads before continuing them.</strong> If a session is running long and you're not ready to close it, ask the AI to summarize the key decisions so far, then paste that summary at the top of a fresh chat.</li>
+ <li><strong>Keep a saved "context block" for recurring tasks.</strong> A short paragraph with your business name, tone preferences, and any standing rules. Paste it at the top of any AI session where it matters. Takes a few seconds; saves a lot of frustration.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Does the AI remember me between sessions?</h3>
+
+<p>By default, many AI chat tools start from scratch when you begin a new conversation. Some tools offer an optional memory feature that stores facts about you and loads them at the start of future sessions. Whether that feature is available, and whether it's turned on, depends on the specific product you're using.</p>
+
+<h3>Why did the AI ignore an instruction I gave it at the start?</h3>
+
+<p>Two likely causes: either the conversation grew long enough to push that instruction out of the context window, or the instruction ended up buried in the middle of a lot of other material and the model gave it less weight (the "lost in the middle" effect). Repeat the instruction in your next message.</p>
+
+<h3>Does a bigger context window mean the AI is smarter?</h3>
+
+<p>No. A larger context window means the AI can read more text at once; it doesn't change the model's reasoning ability. A sharper model with a smaller window can outperform a weaker model with a giant one on tasks that call for judgment rather than reading a lot of text.</p>
+
+<h3>What happens if I paste more text than the window can hold?</h3>
+
+<p>Some tools will refuse the input and tell you. Others may trim it without saying so, and you'll get a response based on incomplete information. If your task requires a very large document, check whether the tool you're using can handle it before you depend on the output.</p>
+
+<h2>What to do starting today</h2>
+
+<p>You don't need to understand how the technology works inside or memorize token counts. You need two habits: start a fresh chat for each new task, and put your most important instructions at the top of your message where they can't get crowded out.</p>
+
+<p>That's the whole fix. No paid upgrade required; just better placement.</p>
+
+<p>At <strong>AI First Move</strong> we help small-business owners figure out where AI fits into their day, and where it wastes their time. Got a specific business problem you're hoping AI can help with? <strong>Tell us what it is</strong> through our <a href="../../contact/">contact page</a>, and we'll point you toward a practical first move.</p>
+
+<h2>Sources</h2>
+
+<ol style="font-size:.92rem;color:var(--navy-soft)">
+ <li>The AI Career Lab, “Tokens &amp; Context Windows Explained: Why AI 'Forgets' (2026).”</li>
+ <li>PromptQuorum, “LLM Context Window Sizes 2026: GPT-5.6 1M, Claude 1M.”</li>
+ <li>Gmelius, “Google AI Plans Comparison: How Much Will Gemini Cost in 2027?”</li>
+ <li>Liu and others (Stanford University, UC Berkeley, Samaya AI), “Lost in the Middle: How Language Models Use Long Contexts,” 2023.</li>
+</ol>
+
+    <div class="post-cta">
+      <h2 style="margin-top:0">What business problem do you want AI to solve?</h2>
+      <p>Tell us in a sentence or two. We read every message and reply with a practical first move.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../contact/">Tell us your problem</a>
+        <a class="btn btn-ghost" href="../../spell-check/">Try our AI spell check</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../about/">About Us</a></li>
+      <li><a href="../../contact/">Contact Us</a></li>
+      <li><a href="../../privacy/">Privacy Policy</a></li>
+      <li><a href="../../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
