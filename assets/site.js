@@ -94,4 +94,80 @@
     links[i].setAttribute("aria-haspopup", "menu");
     links[i].setAttribute("aria-expanded", "false");
   }
+
+  /* Glossary links: <a class="term" href=".../glossary/#term-id"> shows that term's short
+     definition on hover or keyboard focus; a click goes to the Glossary page. The text is
+     read from the Glossary page itself, so each definition is written in one place.
+     Without JavaScript, and on touch screens, the link simply opens the Glossary. */
+  var tip = null;
+  var tipFor = null;
+  var defs = null;
+  var loading = null;
+
+  function loadDefs(url) {
+    if (defs) return Promise.resolve(defs);
+    if (!loading) {
+      loading = fetch(url).then(function (r) { return r.ok ? r.text() : ""; }).then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        var entries = doc.querySelectorAll(".term-entry[id]");
+        var out = {};
+        for (var j = 0; j < entries.length; j++) {
+          var name = entries[j].querySelector("dt");
+          var text = entries[j].querySelector(".term-def");
+          if (name && text) out[entries[j].id] = { name: name.textContent, text: text.textContent };
+        }
+        defs = out;
+        return out;
+      }).catch(function () { defs = {}; return defs; });
+    }
+    return loading;
+  }
+
+  function hideTip() {
+    if (tip) { tip.remove(); tip = null; }
+    if (tipFor) { tipFor.removeAttribute("aria-describedby"); tipFor = null; }
+  }
+
+  function showTip(link) {
+    var href = link.getAttribute("href") || "";
+    var hash = href.indexOf("#");
+    if (hash < 0 || tipFor === link) return;
+    hideTip();
+    tipFor = link;
+    loadDefs(href.slice(0, hash)).then(function (d) {
+      var entry = d[href.slice(hash + 1)];
+      if (tipFor !== link || !entry) return;
+      tip = document.createElement("div");
+      tip.className = "term-tip";
+      tip.id = "term-tip";
+      tip.setAttribute("role", "tooltip");
+      var name = document.createElement("strong");
+      name.textContent = entry.name;
+      var more = document.createElement("span");
+      more.textContent = "Click for the full entry";
+      tip.appendChild(name);
+      tip.appendChild(document.createTextNode(entry.text));
+      tip.appendChild(more);
+      document.body.appendChild(tip);
+      link.setAttribute("aria-describedby", "term-tip");
+      var r = link.getBoundingClientRect();
+      var left = Math.max(8, Math.min(r.left + window.scrollX, window.scrollX + document.documentElement.clientWidth - tip.offsetWidth - 8));
+      var top = r.bottom + window.scrollY + 8;
+      if (r.bottom + tip.offsetHeight + 12 > window.innerHeight && r.top > tip.offsetHeight + 12) {
+        top = r.top + window.scrollY - tip.offsetHeight - 8;
+      }
+      tip.style.left = left + "px";
+      tip.style.top = top + "px";
+    });
+  }
+
+  function termLink(target) { return target && target.closest ? target.closest("a.term") : null; }
+
+  if (window.fetch && window.DOMParser) {
+    document.addEventListener("mouseover", function (e) { var l = termLink(e.target); if (l) showTip(l); });
+    document.addEventListener("mouseout", function (e) { if (termLink(e.target)) hideTip(); });
+    document.addEventListener("focusin", function (e) { var l = termLink(e.target); if (l) showTip(l); });
+    document.addEventListener("focusout", function (e) { if (termLink(e.target)) hideTip(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideTip(); });
+  }
 })();
