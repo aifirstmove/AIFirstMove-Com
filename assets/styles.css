@@ -234,3 +234,34 @@ section { padding: 72px 0; }
 .post-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
 .post-card h2 { font-size: 1.15rem; margin: .35em 0; }
 .post-card p { color: var(--navy-soft); font-size: .95rem; margin: 0; }
+
+/* Glossary page */
+.az { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.az a { font-family: var(--font-head); font-weight: 600; min-width: 40px; text-align: center; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; }
+.az a:hover { border-color: var(--gold); background: var(--gold-tint); color: var(--navy); }
+.glossary { padding-bottom: 72px; }
+.glossary > * { max-width: 760px; }
+.glossary .letter { font-size: 1.4rem; margin: 1.8em 0 0; padding-bottom: 6px; border-bottom: 3px solid var(--gold); scroll-margin-top: 96px; }
+.terms { margin: 0; }
+.term-entry { padding: 20px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 96px; }
+.term-entry:target { background: var(--gold-tint); box-shadow: -14px 0 0 var(--gold-tint), 14px 0 0 var(--gold-tint); }
+.term-entry dt { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; margin-bottom: 6px; }
+.term-entry dd { margin: 0; }
+.term-entry p { margin: 0 0 .5em; }
+.term-entry p:last-child { margin-bottom: 0; }
+.term-why { color: var(--navy-soft); font-size: .98rem; }
+.term-more { font-size: .95rem; }
+
+/* Glossary links in posts and pages: hover shows the definition, click opens the Glossary */
+a.term { text-decoration: underline dotted; text-decoration-thickness: 2px; text-decoration-color: var(--gold); }
+.term-tip { position: absolute; z-index: 40; max-width: 320px; padding: 12px 14px; background: var(--navy); color: var(--white); border-radius: 12px; font-size: .92rem; line-height: 1.45; box-shadow: 0 18px 40px -18px rgba(11,34,67,.55); pointer-events: none; }
+.term-tip strong { display: block; font-family: var(--font-head); color: var(--gold); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.term-tip span { display: block; margin-top: 6px; color: #C9D3E3; font-size: .8rem; }
+
+/* Narrow phones: four header links do not fit beside the logo, so the links take their own row */
+@media (max-width: 560px) {
+  .site-header .wrap { flex-wrap: wrap; row-gap: 0; min-height: 0; padding-top: 10px; padding-bottom: 6px; }
+  .brand span { white-space: nowrap; }
+  .nav { width: 100%; justify-content: space-between; }
+  .glossary .letter, .term-entry { scroll-margin-top: 130px; }
+}
