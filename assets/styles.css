@@ -145,6 +145,9 @@ section { padding: 72px 0; }
 .foot-links a { text-decoration: none; }
 .foot-links a:hover { text-decoration: underline; }
 .copyright { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 18px; font-size: .88rem; }
+.foot-social { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.foot-social a { width: 44px; height: 44px; display: grid; place-items: center; border: 2px solid var(--navy); border-radius: 50%; color: var(--navy); text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; line-height: 1; }
+.foot-social a:hover { border-color: var(--gold); background: var(--gold-tint); color: var(--navy); }
 
 @media (max-width: 900px) {
   .hero .wrap, .split { grid-template-columns: 1fr; gap: 36px; }
