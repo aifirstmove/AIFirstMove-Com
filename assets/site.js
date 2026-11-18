@@ -170,4 +170,44 @@
     document.addEventListener("focusout", function (e) { if (termLink(e.target)) hideTip(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideTip(); });
   }
+
+  /* Footer social links: one list, written here, added under the company address in the
+     footer of every page. The addresses live in this one place. A page that already
+     carries a .foot-social list in its own HTML is left alone. */
+  var SOCIAL = [
+    { name: "Facebook", href: "https://www.facebook.com/aifirstmove", mark: "f" },
+    { name: "Instagram", href: "https://www.instagram.com/ai_first_move/", mark: "camera" },
+    { name: "X", href: "https://x.com/aifirstmove", mark: "X" },
+    { name: "Pinterest", href: "https://www.pinterest.com/aifirstmove", mark: "P" }
+  ];
+  var CAMERA = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+    '<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M8 6l1.5-2.5h5L16 6"/><circle cx="12" cy="13" r="3.5"/></svg>';
+
+  var footAddress = document.querySelector(".site-footer address");
+  if (footAddress && !document.querySelector(".site-footer .foot-social")) {
+    var list = document.createElement("ul");
+    list.className = "foot-social";
+    list.setAttribute("aria-label", "AI First Move on social media");
+    for (var s = 0; s < SOCIAL.length; s++) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = SOCIAL[s].href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.title = SOCIAL[s].name;
+      a.setAttribute("aria-label", "AI First Move on " + SOCIAL[s].name + " (opens in a new tab)");
+      if (SOCIAL[s].mark === "camera") {
+        a.innerHTML = CAMERA;
+      } else {
+        var mark = document.createElement("span");
+        mark.setAttribute("aria-hidden", "true");
+        mark.textContent = SOCIAL[s].mark;
+        a.appendChild(mark);
+      }
+      li.appendChild(a);
+      list.appendChild(li);
+    }
+    footAddress.insertAdjacentElement("afterend", list);
+  }
 })();
