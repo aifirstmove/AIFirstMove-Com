@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to get AI to answer from your own documents: RAG in plain English | AI First Move</title>
+<meta name="description" content="RAG makes AI look things up in your documents before it answers. Four no-code ways to use it today, what it still gets wrong, and when to call a developer.">
+<link rel="canonical" href="https://aifirstmove.com/blog/teach-ai-about-your-business/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to get AI to answer from your own documents: RAG in plain English">
+<meta property="og:description" content="RAG makes AI look things up in your documents before it answers. Four no-code ways to use it today, what it still gets wrong, and when to call a developer.">
+<meta property="og:url" content="https://aifirstmove.com/blog/teach-ai-about-your-business/">
+<meta property="og:image" content="https://aifirstmove.com/assets/blog/teach-ai-about-your-business.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to get AI to answer from your own documents: RAG in plain English", "description": "RAG makes AI look things up in your documents before it answers. Four no-code ways to use it today, what it still gets wrong, and when to call a developer.", "image": "https://aifirstmove.com/assets/blog/teach-ai-about-your-business.png", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "author": {"@type": "Organization", "name": "AI First Move", "url": "https://aifirstmove.com/"}, "publisher": {"@type": "Organization", "name": "AI First Move", "logo": {"@type": "ImageObject", "url": "https://aifirstmove.com/assets/logo.png"}}, "mainEntityOfPage": "https://aifirstmove.com/blog/teach-ai-about-your-business/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="AI First Move home">
+      <img src="../../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../blog/" aria-current="page">Blog</a>
+      <a href="../../glossary/">Glossary</a>
+      <a href="../../spell-check/">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article>
+  <div class="wrap post-head">
+    <h1>How to get AI to answer from your own documents: RAG in plain English</h1>
+    <p class="post-meta">By AI First Move · <time datetime="2026-11-20">November 20, 2026</time> · <a href="../../blog/">All articles</a></p>
+    <img class="post-hero" src="../../assets/blog/teach-ai-about-your-business.png" alt="A hardware store owner in an apron pulls a thick binder from a long shelf of binders behind his counter to look something up" width="1536" height="864">
+  </div>
+  <div class="wrap post-body">
+<p><a class="term" href="../../glossary/#rag">RAG</a>, short for retrieval-augmented generation, is a method where an AI first looks up the relevant passages in a set of documents you choose, then writes its answer from what it finds there. Give it your price list, your return policy or your operations manual, and it answers from those pages instead of from general knowledge. You don't need to write any code to get started.</p>
+
+<h2>Key takeaways</h2>
+
+<ul>
+ <li>RAG has the AI look up relevant passages in your chosen documents before it writes, so the answer comes from your policies instead of a guess.</li>
+ <li>You can use the idea today without technical skills: attach files to a chat, keep them in a project, connect a file store, or use a notebook-style tool such as Gemini Notebook.</li>
+ <li>RAG reduces made-up answers but doesn't remove them. Out-of-date or contradictory documents will still produce wrong answers.</li>
+ <li>A custom-built system is worth asking a developer about only when the ready-made tools can't reach your information or handle the amount of it.</li>
+</ul>
+
+<h2>What RAG does</h2>
+
+<p>RAG is a two-step process: look up, then write. The AI pulls the most relevant passages from your documents first, then writes a response based on those passages. Without it, the AI draws only on what it learned in training, which means it has no idea your service fee changed last quarter or that your warranty is 24 months, not 12.</p>
+
+<p>Think of it as giving the AI a research job before the writing job. It reads the right pages of your binder, then drafts the answer. That's the whole idea.</p>
+
+<p>A <a class="term" href="../../glossary/#hallucination">hallucination</a> is when an AI states something false as though it were fact. RAG makes that less likely on topics your documents cover, because the AI is working from your words. But "less likely" isn't "never." Read every important answer before it goes out.</p>
+
+<h2>Why a general AI gets your business details wrong</h2>
+
+<p>A general-purpose AI learned from enormous amounts of public text. Your internal documents weren't part of that. So when you ask it about your own refund policy or product specs, it either says it doesn't know or, worse, fills the gap with something plausible that isn't true.</p>
+
+<p>RAG closes that gap. Your documents become the material it writes from.</p>
+
+<p>The catch: if your documents are out of date, or two files contradict each other, the AI will faithfully pass that confusion on. Garbage in, garbage out still applies.</p>
+
+<h2>The no-code ways to use it right now</h2>
+
+<p>You don't need a developer to get started. Four approaches work today in ordinary chat apps.</p>
+
+<h3>Attach files to a chat</h3>
+
+<p>The main AI chat tools let you attach a PDF, Word document or spreadsheet to a conversation. The AI reads the file and answers from it. This is the fastest way to try the idea: open a chat, attach your employee handbook, and ask a question about your overtime policy.</p>
+
+<p>The limit is that an attached file generally stays with that one conversation. You attach it again for each new chat, which is fine for an occasional question but gets tedious fast.</p>
+
+<h3>Keep your documents in a project</h3>
+
+<p>Several AI apps let you set up a <a class="term" href="../../glossary/#custom-assistant">project</a> where you store documents once and they stay available in every conversation inside it. Add your price list, your contract template and your FAQ, and the AI draws on them each time without another upload.</p>
+
+<p>A technical aside you can skip: when your files are small, the AI simply reads all of them. When there is more than it can hold at once, the app switches to looking up only the relevant passages, which is RAG proper. Claude's projects, for example, make that switch automatically.<sup>[1]</sup> Either way, the result for you is the same: answers drawn from your documents.</p>
+
+<p>This is the right starting point for most small businesses. Our guide to <a href="../build-an-assistant-that-knows-your-business/">building an AI assistant that already knows your business</a> walks through the setup.</p>
+
+<h3>Connect a file store</h3>
+
+<p>A <a class="term" href="../../glossary/#connector">connector</a> is a ready-made link between an AI assistant and another service, such as the place where you keep your files online. Instead of uploading a copy of a document, you point the AI at the folder where the current version lives.</p>
+
+<p>That saves re-uploading every time something changes, though how quickly an edit shows up depends on the tool and how it's set up. If your prices, product specs or policies change often, a connector is worth setting up. Check what the connector is allowed to read before you switch it on.</p>
+
+<h3>Use a notebook-style tool</h3>
+
+<p>Google's Gemini Notebook, which was called NotebookLM until Google renamed it in 2026,<sup>[2]</sup> is built for the "answer from these documents" job. You add your sources, and its answers are based on those sources and point back to the passages they came from.</p>
+
+<p>For business use, that limit is a strength. You want a draft reply to a customer to come from your return policy, not from the AI's general impression of what return policies usually say.</p>
+
+<h2>The options at a glance</h2>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>Approach</th>
+ <th>How it works</th>
+ <th>Best for</th>
+ <th>Main limit</th>
+ </tr>
+ <tr>
+ <td>Attach a file to a chat</td>
+ <td>The AI reads the document in that one conversation</td>
+ <td>One-off questions about a specific document</td>
+ <td>You attach it again for each new chat</td>
+ </tr>
+ <tr>
+ <td>Project</td>
+ <td>You store documents once; every chat in the project can use them</td>
+ <td>Questions your team asks again and again</td>
+ <td>You replace a document by hand when it changes</td>
+ </tr>
+ <tr>
+ <td>Connector to a file store</td>
+ <td>The AI reads from a linked folder</td>
+ <td>Documents that change often</td>
+ <td>The tool has to support your file store, and some connectors need an administrator to set up</td>
+ </tr>
+ <tr>
+ <td>Notebook-style tool</td>
+ <td>The AI is built to answer from the sources you add</td>
+ <td>When answers must stick to your documents</td>
+ <td>It can't help with anything your sources don't cover</td>
+ </tr>
+</table>
+</div>
+
+<h2>What RAG still won't fix</h2>
+
+<p>RAG lowers the chance of made-up answers on the topics your documents cover. It doesn't remove it. The AI can still misread a table, misunderstand an unclear sentence, or pick the wrong passage when documents overlap.</p>
+
+<p>Three problems to watch for:</p>
+
+<ul>
+ <li><strong>Stale documents:</strong> An AI reading an eight-month-old price list will quote eight-month-old prices. Keep your source documents current.</li>
+ <li><strong>Contradictory documents:</strong> If an old policy and a new one sit in the same project and disagree, the AI may blend them or pick the wrong one. Remove the old version.</li>
+ <li><strong>Gaps:</strong> RAG only helps on topics your documents cover. Outside them, the AI may still guess.</li>
+</ul>
+
+<p>None of that makes it less worth using. It does mean someone should review anything that goes to a customer. <a href="../why-ai-gets-things-wrong/">Why AI gets things wrong, and a simple way to check its work</a> has a quick routine for that.</p>
+
+<h2>When a custom-built system is worth asking a developer about</h2>
+
+<p>The ready-made tools cover most small-business needs. A custom system makes sense when:</p>
+
+<ul>
+ <li>Your documents live in a system that has no ready-made connector</li>
+ <li>You want the AI built into your own website or customer portal</li>
+ <li>Your document library is very large and needs careful organizing to return accurate results</li>
+ <li>You have strict privacy requirements that rule out the standard services</li>
+</ul>
+
+<p>Custom builds take real money and time. Start with a no-code approach. If you hit a ceiling, go to a developer with a specific problem in hand, not a vague goal.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Do my documents leave my business?</h3>
+
+<p>Yes. When you upload files to an AI tool, they are stored and processed on that company's systems. Check how the tool handles your data before you upload anything with personal or confidential information in it. <a href="../is-ai-safe-for-customer-data/">Is it safe to put customer or business information into an AI tool?</a> covers what to look for.</p>
+
+<h3>Does it work on scanned PDFs or images?</h3>
+
+<p>It depends on the tool. Many can read the text in a scanned PDF if the scan is clean. Handwritten notes and poor scans tend to give unreliable results. Typed documents, well-formatted PDFs and Word files work best.</p>
+
+<h3>How many documents can I add?</h3>
+
+<p>Each tool sets its own limits, and they change. Check the help pages of the tool you use. In practice, start with the handful of documents you use most instead of loading everything at once.</p>
+
+<h3>Will the AI tell me when it can't find the answer?</h3>
+
+<p>Sometimes. Notebook-style tools are built to stay within your sources. General chat tools are more likely to fill a gap from general knowledge. Try your setup with a question you know your documents don't answer and see what happens. You can also tell it: "If the documents don't cover this, say so."</p>
+
+<h3>Is RAG the same as fine-tuning?</h3>
+
+<p>No. <a class="term" href="../../glossary/#fine-tuning">Fine-tuning</a> gives the AI extra training on your examples, which is a technical and costly project. RAG doesn't change the AI at all; it gives the AI your documents to read before it answers. For most business owners, RAG is the place to start.</p>
+
+<h2>Your next step</h2>
+
+<p>Pick one document your team looks things up in all the time: your return policy, your service menu, your onboarding checklist. Add it to a project in an AI chat tool you already use. Ask three questions you would normally look up by hand. That's enough to tell whether it saves you time.</p>
+
+<p>Start narrow. See what works. Expand from there.</p>
+
+<p>At AI First Move, we help business owners work out where AI fits, without the jargon and without pressure to buy something complicated. If you have a business problem you want AI to solve, <a href="../../contact/">tell us what it is</a>. We'd like to hear it.</p>
+
+<h2>Sources</h2>
+
+<ol style="font-size:.92rem;color:var(--navy-soft)">
+ <li>Claude Help Center, “Retrieval augmented generation (RAG) for projects.”</li>
+ <li>Google, The Keyword, “NotebookLM is now Gemini Notebook.”</li>
+</ol>
+
+    <div class="post-cta">
+      <h2 style="margin-top:0">What business problem do you want AI to solve?</h2>
+      <p>Tell us in a sentence or two. We read every message and reply with a practical first move.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../contact/">Tell us your problem</a>
+        <a class="btn btn-ghost" href="../../spell-check/">Try our AI spell check</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../about/">About Us</a></li>
+      <li><a href="../../contact/">Contact Us</a></li>
+      <li><a href="../../privacy/">Privacy Policy</a></li>
+      <li><a href="../../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
