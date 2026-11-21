@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why AI gets things wrong, and a simple way to check its work | AI First Move</title>
+<meta name="description" content="AI can state something false with full confidence. Seven places it goes wrong, the quick check for each one, and how much checking each kind of task needs.">
+<link rel="canonical" href="https://aifirstmove.com/blog/why-ai-gets-things-wrong/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why AI gets things wrong, and a simple way to check its work">
+<meta property="og:description" content="AI can state something false with full confidence. Seven places it goes wrong, the quick check for each one, and how much checking each kind of task needs.">
+<meta property="og:url" content="https://aifirstmove.com/blog/why-ai-gets-things-wrong/">
+<meta property="og:image" content="https://aifirstmove.com/assets/blog/why-ai-gets-things-wrong.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why AI gets things wrong, and a simple way to check its work", "description": "AI can state something false with full confidence. Seven places it goes wrong, the quick check for each one, and how much checking each kind of task needs.", "image": "https://aifirstmove.com/assets/blog/why-ai-gets-things-wrong.png", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "author": {"@type": "Organization", "name": "AI First Move", "url": "https://aifirstmove.com/"}, "publisher": {"@type": "Organization", "name": "AI First Move", "logo": {"@type": "ImageObject", "url": "https://aifirstmove.com/assets/logo.png"}}, "mainEntityOfPage": "https://aifirstmove.com/blog/why-ai-gets-things-wrong/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="AI First Move home">
+      <img src="../../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../blog/" aria-current="page">Blog</a>
+      <a href="../../glossary/">Glossary</a>
+      <a href="../../spell-check/">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article>
+  <div class="wrap post-head">
+    <h1>Why AI gets things wrong, and a simple way to check its work</h1>
+    <p class="post-meta">By AI First Move · <time datetime="2026-11-20">November 20, 2026</time> · <a href="../../blog/">All articles</a></p>
+    <img class="post-hero" src="../../assets/blog/why-ai-gets-things-wrong.png" alt="Close-up of a carpenter&#x27;s hands holding a steel square against the corner of a freshly cut board on a workbench, checking the cut before using it" width="1536" height="864">
+  </div>
+  <div class="wrap post-body">
+<p>AI gets things wrong because it doesn't actually "know" anything. It predicts the most likely next word based on patterns in its <a class="term" href="../../glossary/#training-data">training data</a>, and that process can produce a confident, well-written sentence that's completely false. You can't tell the difference just by reading it. That's the core problem, and it's what every check on this list is designed to catch.</p>
+
+<h2>Key takeaways</h2>
+
+<ul>
+ <li><strong>AI predicts words, not facts.</strong> A fluent, confident answer can still be entirely made up, so good writing is never proof of accuracy.</li>
+ <li><strong>Some tasks need more scrutiny than others.</strong> An AI-drafted social media caption carries far less risk than an AI-drafted legal notice or financial summary.</li>
+ <li><strong>A second AI can catch what the first one missed.</strong> Asking a different AI tool to critique the same output is a fast extra check.</li>
+ <li><strong>Citations need special care.</strong> AI can produce references that look completely real, with believable titles and author names, for papers and court cases that don't exist.</li>
+ <li><strong>Your own knowledge is your first filter.</strong> If something in the AI output surprises you, that's your signal to verify it before it goes anywhere.</li>
+</ul>
+
+<h2>1. The confidence trap: AI states false things like they're obvious facts</h2>
+
+<p>A person who isn't sure about something usually hesitates, qualifies, or says "I think." AI often doesn't do that. It produces confident, well-structured prose whether the underlying information is accurate or not.</p>
+
+<p>This is called a <a class="term" href="../../glossary/#hallucination">hallucination</a>. The AI isn't lying. It's predicting the words that most plausibly follow the ones before them, and sometimes those words form a sentence that describes something that never happened.</p>
+
+<p>Your check: treat every surprising claim as unverified until you've looked it up in an independent source. That doesn't mean every sentence. But if the output says something specific, like a date, a name, a law, or a number, that specific thing needs a second look.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>What makes this tricky</th>
+ <th>What actually helps</th>
+ </tr>
+ <tr>
+ <td>The writing sounds authoritative</td>
+ <td>Focus on the claims, not the tone</td>
+ </tr>
+ <tr>
+ <td>Wrong facts are buried in otherwise correct text</td>
+ <td>Check specific details, not the overall impression</td>
+ </tr>
+ <tr>
+ <td>You may already half-believe it because it sounds right</td>
+ <td>Be more skeptical when the AI <a class="term" href="../../glossary/#sycophancy">confirms what you hoped to hear</a></td>
+ </tr>
+</table>
+</div>
+
+<h2>2. Training cutoffs mean AI can be months or years behind</h2>
+
+<p>Most AI tools were <a class="term" href="../../glossary/#knowledge-cutoff">trained on data up to a certain point in time</a>. Anything that happened after that point, they simply don't know, unless the tool searches the web for current information.</p>
+
+<p>This creates a specific failure pattern. You ask about a law, a regulation, a competitor's pricing, or a market trend. The AI gives you a fluent answer. But that answer may reflect the world as it was when the training data was collected, not today.</p>
+
+<p>Your check: for anything time-sensitive, go to the primary source. If the AI summarizes a government regulation, look up the regulation itself. If it describes a competitor's product, go to that company's website. This step is easy to skip, and it's where big errors can hide.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>Higher risk of being out of date</th>
+ <th>Lower risk of being out of date</th>
+ </tr>
+ <tr>
+ <td>Tax rules, employment law, compliance requirements</td>
+ <td>Writing tips, general business concepts</td>
+ </tr>
+ <tr>
+ <td>Competitor products, pricing, features</td>
+ <td>Brainstorming ideas for a marketing campaign</td>
+ </tr>
+ <tr>
+ <td>Industry news, market conditions</td>
+ <td>Drafting a standard client email</td>
+ </tr>
+</table>
+</div>
+
+<h2>3. Names, titles, and credentials get invented or scrambled</h2>
+
+<p>AI can get personal details wrong. It may attribute a quote to the wrong person, give someone the wrong job title, or combine details from two different real people into one profile.</p>
+
+<p>This matters in a business setting. Put a wrong title next to a person's name in a proposal or a newsletter, and you've sent something that makes you look careless to the very person you're trying to impress.</p>
+
+<p>Your check: look the person up on their organization's official website or their own professional profile. Don't trust AI to get these details right, even for well-known figures. And never copy an AI-generated bio for a real person without checking every line against a source that person controls.</p>
+
+<h2>4. Numbers and statistics deserve the most suspicion</h2>
+
+<p>Ask AI for a statistic, and it will give you one. That number may be real, misremembered, or entirely made up. You can't tell from the output itself.</p>
+
+<p>This category can get businesses into real trouble. A wrong percentage in a client presentation, a fabricated industry figure in a sales document, or a made-up cost estimate in a proposal can all create serious problems, from lost credibility to bad decisions made on bad data.</p>
+
+<p>Your check: every number in AI output needs a named source. Not "research shows" or "according to studies." A named source means a specific organization, publication, or government body you can find with a search. If the AI can't tell you where the number came from, or if you can't find it on the original source's website, cut the number. Make the point without it.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>What AI does with numbers</th>
+ <th>What you should do instead</th>
+ </tr>
+ <tr>
+ <td>Produces plausible-sounding figures</td>
+ <td>Verify on the primary source's own site</td>
+ </tr>
+ <tr>
+ <td>Attributes stats to vague "reports" or "surveys"</td>
+ <td>Require an organization name and a date</td>
+ </tr>
+ <tr>
+ <td>Mixes real and fabricated data in the same paragraph</td>
+ <td>Check each number individually, not just the paragraph overall</td>
+ </tr>
+</table>
+</div>
+
+<h2>5. AI citations often look real but aren't</h2>
+
+<p>AI can produce a formatted citation, complete with author names, a journal title, a volume number, and a year, that describes a paper that doesn't exist. The journal may be real. The author names may be real names. But the paper itself was never published.</p>
+
+<p>The best-known example comes from a 2023 lawsuit in New York. Lawyers filed a court document citing earlier cases that ChatGPT had made up.<sup>[1]</sup> The cases looked real on the page. They weren't, and the judge fined the lawyers and their firm $5,000.<sup>[2]</sup></p>
+
+<p>Your check: search every citation. For academic papers, use Google Scholar. For news sources, search the outlet's own site. For books, check a library catalog. If you can't find it, it probably doesn't exist. Cut it.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>Warning signs of a fake citation</th>
+ <th>How to verify</th>
+ </tr>
+ <tr>
+ <td>No search results for the exact title</td>
+ <td>Search the full title in quotes on Google Scholar</td>
+ </tr>
+ <tr>
+ <td>Author name appears nowhere near that topic</td>
+ <td>Search the author name plus the topic separately</td>
+ </tr>
+ <tr>
+ <td>Publication you've never heard of</td>
+ <td>Go to the publication's own website and search its archive</td>
+ </tr>
+</table>
+</div>
+
+<h2>6. Niche and local knowledge is especially unreliable</h2>
+
+<p>AI learns from what is widely published online. The less that has been written about a subject, the less it has to go on. That tends to mean thinner coverage of local regulations, regional market conditions, niche industries, and situations specific to a small business.</p>
+
+<p>If you run a plumbing company and ask AI about licensing requirements in your city, it may give you an answer that sounds accurate but describes another state's rules, or no specific state at all. The same goes for local competitors, regional suppliers, and compliance rules for your industry.</p>
+
+<p>Your check: for anything local or niche, go to the official source first. Your state or city government website for regulations. Your industry association for standards. A licensed professional for legal or compliance questions. AI can help you understand the general picture; it shouldn't be your final word on the specifics.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>Topic type</th>
+ <th>Recommended primary source</th>
+ </tr>
+ <tr>
+ <td>Local business licensing</td>
+ <td>Your city or county government website</td>
+ </tr>
+ <tr>
+ <td>State employment law</td>
+ <td>Your state's labor department website</td>
+ </tr>
+ <tr>
+ <td>Industry-specific regulations</td>
+ <td>Your industry's regulatory body or association</td>
+ </tr>
+</table>
+</div>
+
+<h2>7. The two-AI check: use a second tool to challenge the first</h2>
+
+<p>This is a useful extra check, and it costs nothing more if you already have access to more than one AI tool. Use one AI to generate your draft. Then paste that draft into a second AI and ask it to find factual errors, unsupported claims, and gaps in the logic.</p>
+
+<p>Different AI tools are built by different companies and trained in somewhat different ways, so they don't always share the same blind spots. What one confidently gets wrong, another may flag or contradict. It won't catch everything, and the second AI can be wrong too. But it adds a useful layer of scrutiny, especially for longer documents.</p>
+
+<p>A simple <a class="term" href="../../glossary/#prompt">prompt</a> to try: "Read the following text and list any claims that may be factually incorrect, unsupported, or outdated. Focus on specific names, numbers, dates, and attributed statements."</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>What the two-AI check catches well</th>
+ <th>What it won't catch reliably</th>
+ </tr>
+ <tr>
+ <td>Contradictions within the text</td>
+ <td>Errors that both tools share</td>
+ </tr>
+ <tr>
+ <td>Factual claims the two tools disagree on</td>
+ <td>Local or niche information neither tool knows well</td>
+ </tr>
+ <tr>
+ <td>Gaps in reasoning or missing context</td>
+ <td>Very recent events, if neither tool searches the web</td>
+ </tr>
+</table>
+</div>
+
+<h2>How much checking does each task need?</h2>
+
+<p>Not every AI task carries the same stakes. A brainstorming session for new product names doesn't need the same checking as a draft for your employee handbook. Use this table to match your effort to the risk involved.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+ <th>Task type</th>
+ <th>Risk level</th>
+ <th>Checking needed</th>
+ </tr>
+ <tr>
+ <td>Creative brainstorming, idea lists, rough outlines</td>
+ <td>Low</td>
+ <td>Skim for obvious problems; no deep fact-check needed</td>
+ </tr>
+ <tr>
+ <td>Customer emails, social posts, internal memos</td>
+ <td>Low to medium</td>
+ <td>Read carefully; check any specific claims or names</td>
+ </tr>
+ <tr>
+ <td>Blog posts, website copy, marketing materials</td>
+ <td>Medium</td>
+ <td>Verify all statistics, citations, and names</td>
+ </tr>
+ <tr>
+ <td>Proposals, reports, documents sent to clients</td>
+ <td>Medium to high</td>
+ <td>Check every factual claim; use the two-AI check</td>
+ </tr>
+ <tr>
+ <td>Legal, financial, medical, or compliance content</td>
+ <td>High</td>
+ <td>Professional review required; don't rely on AI output alone</td>
+ </tr>
+</table>
+</div>
+
+<h2>Frequently asked questions about AI errors</h2>
+
+<h3>Does AI know when it's wrong?</h3>
+
+<p>Not in a way you can count on. The AI isn't concealing uncertainty on purpose. According to researchers at OpenAI, the tests used to grade AI models tend to reward a guess over an honest "I don't know," so models learn to answer with a confident guess.<sup>[3]</sup> That guess can be wrong with no visible sign that anything is off.</p>
+
+<h3>Are some AI tools more accurate than others?</h3>
+
+<p>Yes, in general terms. Tools that search the live web have an advantage for current information over tools that rely only on what they learned in training. But no tool is immune to hallucination. Searching the web adds a source; it doesn't guarantee the AI reads or summarizes that source correctly.</p>
+
+<h3>Can I ask AI to tell me its sources?</h3>
+
+<p>You can ask, and you should. But the sources it lists need to be verified independently, for exactly the reason covered in item 5 above. A source cited by AI is a starting point for your search, not a confirmed reference.</p>
+
+<h3>What's the fastest single check I can do right now?</h3>
+
+<p>Copy any specific factual claim from your AI output. Put it in quotes in a web search. See if a credible, named source confirms it. If a quick search doesn't turn one up, treat the claim as unverified and either cut it or find a source yourself.</p>
+
+<h2>Make checking a habit</h2>
+
+<p>Read every AI draft before it goes out. That's the baseline. Add more checking on top of that based on what's at stake, and you'll avoid many of the mistakes that trip up new AI users.</p>
+
+<p>At AI First Move, we help business owners work out where AI saves time and where it needs a close eye. Got a specific task you're wondering about? <a href="../../contact/">Tell us what business problem you'd like AI to solve</a>, and we'll point you in the right direction.</p>
+
+<h2>Sources</h2>
+
+<ol style="font-size:.92rem;color:var(--navy-soft)">
+ <li>CNN Business, “Lawyer apologizes for fake court citations from ChatGPT.”</li>
+ <li>US District Court, Southern District of New York, Mata v. Avianca, Inc., Opinion and Order on Sanctions (June 22, 2023).</li>
+ <li>OpenAI, “Why language models hallucinate.”</li>
+</ol>
+
+    <div class="post-cta">
+      <h2 style="margin-top:0">What business problem do you want AI to solve?</h2>
+      <p>Tell us in a sentence or two. We read every message and reply with a practical first move.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../contact/">Tell us your problem</a>
+        <a class="btn btn-ghost" href="../../spell-check/">Try our AI spell check</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../about/">About Us</a></li>
+      <li><a href="../../contact/">Contact Us</a></li>
+      <li><a href="../../privacy/">Privacy Policy</a></li>
+      <li><a href="../../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
