@@ -3,9 +3,80 @@
    program set up. Clicking an email link here opens a small menu instead, so people
    who use webmail (Gmail, Outlook.com, Yahoo) can open a new message there, use their
    own email app, or copy the address. Without JavaScript the links stay ordinary
-   mailto links. */
+   mailto links.
+   The script also writes the shared header links and footer (see below). */
 (function () {
   "use strict";
+
+  /* Shared header and footer. The header links and the whole footer are written here, in
+     one place, and placed on every page when it loads. To change a header link, the
+     company details, a footer link or a social link, change it here and nowhere else.
+     Each page still carries a plain header and footer in its own HTML, which is what a
+     visitor sees if JavaScript is off. */
+  var NAV = [
+    { name: "Home", path: "" },
+    { name: "Blog", path: "blog/" },
+    { name: "Glossary", path: "glossary/" },
+    { name: "Spell Check", path: "spell-check/" },
+    { name: "Wallet Passes", path: "wallet-passes/" }
+  ];
+  var FOOT_LINKS = [
+    { name: "About Us", path: "about/" },
+    { name: "Contact Us", path: "contact/" },
+    { name: "Privacy Policy", path: "privacy/" },
+    { name: "Terms of Service", path: "terms/" }
+  ];
+  var SOCIAL = [
+    { name: "Facebook", href: "https://www.facebook.com/aifirstmove", mark: "f" },
+    { name: "Instagram", href: "https://www.instagram.com/ai_first_move/", mark: "camera" },
+    { name: "X", href: "https://x.com/aifirstmove", mark: "X" },
+    { name: "Pinterest", href: "https://www.pinterest.com/aifirstmove", mark: "P" }
+  ];
+  var CAMERA = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+    '<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M8 6l1.5-2.5h5L16 6"/><circle cx="12" cy="13" r="3.5"/></svg>';
+
+  /* The site root, worked out from this script's own address, so links are right at any depth. */
+  var self = document.currentScript || document.querySelector('script[src*="assets/site.js"]');
+  var root = self ? (self.getAttribute("src") || "").replace(/assets\/site\.js.*$/, "") : "";
+  function to(path) { return (root + path) || "./"; }
+  function pathOf(href) { var a = document.createElement("a"); a.href = href; return a.pathname.replace(/index\.html$/, ""); }
+  var here = location.pathname.replace(/index\.html$/, "");
+
+  var nav = document.querySelector(".site-header .nav");
+  if (nav) {
+    nav.textContent = "";
+    for (var n = 0; n < NAV.length; n++) {
+      var navLink = document.createElement("a");
+      navLink.href = to(NAV[n].path);
+      navLink.textContent = NAV[n].name;
+      var target = pathOf(navLink.href);
+      if (NAV[n].path === "" ? here === target : here.indexOf(target) === 0) navLink.setAttribute("aria-current", "page");
+      nav.appendChild(navLink);
+    }
+  }
+
+  var foot = document.querySelector(".site-footer .wrap");
+  if (foot) {
+    var social = "";
+    for (var s = 0; s < SOCIAL.length; s++) {
+      social += '<li><a href="' + SOCIAL[s].href + '" target="_blank" rel="noopener" title="' + SOCIAL[s].name +
+        '" aria-label="AI First Move on ' + SOCIAL[s].name + ' (opens in a new tab)">' +
+        (SOCIAL[s].mark === "camera" ? CAMERA : '<span aria-hidden="true">' + SOCIAL[s].mark + "</span>") + "</a></li>";
+    }
+    var footLinks = "";
+    for (var f = 0; f < FOOT_LINKS.length; f++) {
+      footLinks += '<li><a href="' + to(FOOT_LINKS[f].path) + '">' + FOOT_LINKS[f].name + "</a></li>";
+    }
+    foot.innerHTML =
+      "<div><strong>AI First Move</strong>" +
+      "<address>A DBA of Effinsoftware.com INC<br>2232 Dell Range Blvd, Suite 245-3069<br>Cheyenne, WY 82009<br>" +
+      '<a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a></address>' +
+      '<ul class="foot-social" aria-label="AI First Move on social media">' + social + "</ul></div>" +
+      '<ul class="foot-links">' + footLinks + "</ul>" +
+      '<p class="copyright">&copy; ' + new Date().getFullYear() + " Effinsoftware.com INC. All rights reserved.</p>";
+  }
+
   var menu = null;
   var opener = null;
 
@@ -169,45 +240,5 @@
     document.addEventListener("focusin", function (e) { var l = termLink(e.target); if (l) showTip(l); });
     document.addEventListener("focusout", function (e) { if (termLink(e.target)) hideTip(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideTip(); });
-  }
-
-  /* Footer social links: one list, written here, added under the company address in the
-     footer of every page. The addresses live in this one place. A page that already
-     carries a .foot-social list in its own HTML is left alone. */
-  var SOCIAL = [
-    { name: "Facebook", href: "https://www.facebook.com/aifirstmove", mark: "f" },
-    { name: "Instagram", href: "https://www.instagram.com/ai_first_move/", mark: "camera" },
-    { name: "X", href: "https://x.com/aifirstmove", mark: "X" },
-    { name: "Pinterest", href: "https://www.pinterest.com/aifirstmove", mark: "P" }
-  ];
-  var CAMERA = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" ' +
-    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
-    '<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M8 6l1.5-2.5h5L16 6"/><circle cx="12" cy="13" r="3.5"/></svg>';
-
-  var footAddress = document.querySelector(".site-footer address");
-  if (footAddress && !document.querySelector(".site-footer .foot-social")) {
-    var list = document.createElement("ul");
-    list.className = "foot-social";
-    list.setAttribute("aria-label", "AI First Move on social media");
-    for (var s = 0; s < SOCIAL.length; s++) {
-      var li = document.createElement("li");
-      var a = document.createElement("a");
-      a.href = SOCIAL[s].href;
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.title = SOCIAL[s].name;
-      a.setAttribute("aria-label", "AI First Move on " + SOCIAL[s].name + " (opens in a new tab)");
-      if (SOCIAL[s].mark === "camera") {
-        a.innerHTML = CAMERA;
-      } else {
-        var mark = document.createElement("span");
-        mark.setAttribute("aria-hidden", "true");
-        mark.textContent = SOCIAL[s].mark;
-        a.appendChild(mark);
-      }
-      li.appendChild(a);
-      list.appendChild(li);
-    }
-    footAddress.insertAdjacentElement("afterend", list);
   }
 })();
