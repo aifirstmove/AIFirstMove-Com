@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCP in plain English: how AI plugs into the tools your business already uses | AI First Move</title>
+<meta name="description" content="MCP is the open standard that lets AI assistants connect to the tools you already use. What it is, how connectors work, and what to check before you connect.">
+<link rel="canonical" href="https://aifirstmove.com/blog/mcp-in-plain-english/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MCP in plain English: how AI plugs into the tools your business already uses">
+<meta property="og:description" content="MCP is the open standard that lets AI assistants connect to the tools you already use. What it is, how connectors work, and what to check before you connect.">
+<meta property="og:url" content="https://aifirstmove.com/blog/mcp-in-plain-english/">
+<meta property="og:image" content="https://aifirstmove.com/assets/blog/mcp-in-plain-english.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "MCP in plain English: how AI plugs into the tools your business already uses", "description": "MCP is the open standard that lets AI assistants connect to the tools you already use. What it is, how connectors work, and what to check before you connect.", "image": "https://aifirstmove.com/assets/blog/mcp-in-plain-english.png", "datePublished": "2026-11-22", "dateModified": "2026-11-22", "author": {"@type": "Organization", "name": "AI First Move", "url": "https://aifirstmove.com/"}, "publisher": {"@type": "Organization", "name": "AI First Move", "logo": {"@type": "ImageObject", "url": "https://aifirstmove.com/assets/logo.png"}}, "mainEntityOfPage": "https://aifirstmove.com/blog/mcp-in-plain-english/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="AI First Move home">
+      <img src="../../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../blog/" aria-current="page">Blog</a>
+      <a href="../../glossary/">Glossary</a>
+      <a href="../../spell-check/">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article>
+  <div class="wrap post-head">
+    <h1>MCP in plain English: how AI plugs into the tools your business already uses</h1>
+    <p class="post-meta">By AI First Move · <time datetime="2026-11-22">November 22, 2026</time> · <a href="../../blog/">All articles</a></p>
+    <img class="post-hero" src="../../assets/blog/mcp-in-plain-english.png" alt="Close-up of two hands in a small office fitting a plain grey cable into a power strip, with a laptop out of focus behind" width="1536" height="864">
+  </div>
+  <div class="wrap post-body">
+<p><a class="term" href="../../glossary/#mcp">MCP</a>, short for Model Context Protocol, is an open standard that lets AI assistants connect to outside tools and data. Think of it as a universal plug. Instead of building a custom cable every time you want your AI to reach your calendar, your files or your inbox, MCP gives every connection the same shape.</p>
+
+<h2>Key takeaways</h2>
+
+<ul>
+ <li>MCP is an open standard for how AI assistants reach outside tools and data, so each new connection does not need custom code from scratch.</li>
+ <li>A <a class="term" href="../../glossary/#connector">connector</a> is a ready-made link between an AI assistant and one service. A connector built to MCP can be used by any assistant that supports MCP.</li>
+ <li>The AI's ability to act on other software, not just write text, is called <a class="term" href="../../glossary/#tool-use">tool use</a>. MCP is one way to make that ability work across different AI products.</li>
+ <li>Check what a connector can read and change before you switch it on.</li>
+ <li>MCP is still young. Not every tool you use will have a connector yet.</li>
+</ul>
+
+<h2>What problem does MCP solve?</h2>
+
+<p>Before MCP, connecting an AI assistant to a business tool meant writing custom integration code for each pairing. Your AI needs your project app? That is one custom build. It also needs your email and your accounting software? Two more. Each one was built from scratch, and when either side changed, something could break.</p>
+
+<p>Every pairing of an AI and a tool was a separate job to build and maintain. For a small business without an engineering team, that was largely out of reach. MCP replaces those one-off builds with one shared standard. A connector built to MCP for your calendar app can be used by any AI that speaks MCP.</p>
+
+<h2>How MCP works, without the jargon</h2>
+
+<p>MCP has three parts: a host, a client and a server. Each has one job.</p>
+
+<h3>The host: the AI app you talk to</h3>
+
+<p>The host is the AI application you are using, the chat window where you type your request. It runs the conversation and decides what the AI is allowed to do. When you ask your AI to check your schedule, the host receives that request first.</p>
+
+<h3>The client: the go-between</h3>
+
+<p>The client sits inside the host. When the AI needs outside information, the client reaches out to the right connector. You do not see it working. Without it, the AI would be limited to what it already knows.</p>
+
+<h3>The server: the connector to your tool</h3>
+
+<p>An MCP server is the connector itself: a small piece of software that sits between the AI and one tool, such as your email platform or your file storage. It knows how to talk to that tool, what data it may share and what actions it may take. When the client asks for something, the server gets it.</p>
+
+<p>Your AI asks the client, the client asks the server, and the server asks your tool. The answer travels back the same way.</p>
+
+<h2>What an MCP server can offer</h2>
+
+<p>An MCP server can offer three kinds of things to your AI. Each plays a different role.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Type</th>
+  <th>What it is</th>
+  <th>Business example</th>
+ </tr>
+ <tr>
+  <td>Tools</td>
+  <td>Actions the AI can take inside another app</td>
+  <td>Creating a calendar event, saving a draft email, adding a row to a spreadsheet</td>
+ </tr>
+ <tr>
+  <td>Resources</td>
+  <td>Data the AI can read</td>
+  <td>Reading your current stock list, or today's open support tickets</td>
+ </tr>
+ <tr>
+  <td>Prompts</td>
+  <td>Ready-made instruction templates</td>
+  <td>A standard format for a weekly status update</td>
+ </tr>
+</table>
+</div>
+
+<p>Resources are for reading. Tools can make changes. That difference matters when you decide what to allow.</p>
+
+<h2>What happens when your AI is connected</h2>
+
+<p>Say you ask your AI assistant to find last week's customer emails that mention a delayed shipment and draft a reply to each one. Without a connection, you do that copy-and-paste work yourself. With an MCP connector to your email, the AI can read the right threads and draft the replies without you switching tabs.</p>
+
+<p>Or you ask it to block two hours on your calendar each day a project is due. With a calendar connector, it does that directly.</p>
+
+<p>A connected assistant is not limited to one connector. It can use your calendar, your email and your project board, one after another, to finish a single job.</p>
+
+<h2>What to check on security before you connect anything</h2>
+
+<p>When you give an AI access to your email or files through a connector, you create a channel between the AI and that data. That channel needs limits.</p>
+
+<p>Check three things before you turn a connector on:</p>
+
+<ul>
+ <li><strong>What can it read?</strong> Some connectors can be limited to certain folders or labels. Do not grant access to everything if the task needs only part of it.</li>
+ <li><strong>What can it change?</strong> Reading and writing are different. An AI that can only read your calendar carries less risk than one that can also create, edit and delete events.</li>
+ <li><strong>Who built it?</strong> Connectors from outside developers vary in quality. Look for one from a source you recognize, and check whether others have reviewed it.</li>
+</ul>
+
+<p>Treat connector access the way you would treat a key to your office. You would not hand it over without deciding which rooms are included.</p>
+
+<h2>Without MCP and with MCP: a quick comparison</h2>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Situation</th>
+  <th>Without MCP</th>
+  <th>With MCP</th>
+ </tr>
+ <tr>
+  <td>Adding a new tool</td>
+  <td>Custom integration code each time</td>
+  <td>Use an existing MCP connector if one exists</td>
+ </tr>
+ <tr>
+  <td>Switching AI assistants</td>
+  <td>Rebuild the integrations for the new AI</td>
+  <td>Connectors built to MCP can be used by any MCP-compatible AI</td>
+ </tr>
+ <tr>
+  <td>Multi-step tasks</td>
+  <td>Manual handoffs between apps</td>
+  <td>Several connectors can serve one AI-led workflow</td>
+ </tr>
+ <tr>
+  <td>Setup for non-technical users</td>
+  <td>Usually needs a developer</td>
+  <td>Easier with pre-built connectors, though some setup still applies</td>
+ </tr>
+</table>
+</div>
+
+<h2>Where MCP stands today</h2>
+
+<p>MCP was introduced in November 2024 as an open standard by Anthropic.<sup>[2]</sup> In December 2025 Anthropic donated it to the Agentic AI Foundation, a fund under the Linux Foundation.<sup>[2]</sup> Major AI providers, including OpenAI and Google DeepMind, have adopted it.<sup>[2]</sup> The ecosystem is still young, so check whether a tool you rely on offers a connector before you plan around one.</p>
+
+<p>Because the standard is open, a connector you set up can carry over if you later move to another MCP-compatible assistant. That is the main reason to prefer MCP over a one-off link.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Do I need a developer to use MCP?</h3>
+
+<p>For pre-built connectors, often not. Many are turned on through settings rather than code. If you need a connector for a tool that does not have one yet, building it does need developer work.</p>
+
+<h3>Is MCP the same as an API?</h3>
+
+<p>No, though they are related. An API is an interface a software tool offers so other software can talk to it. MCP is a standard for how an AI uses those connections, and MCP servers often sit on top of existing APIs.</p>
+
+<h3>Can my AI make mistakes when it is connected to real tools?</h3>
+
+<p>Yes. A connected AI can send a real email, delete a real file or add a real calendar entry. Review what it has done before those actions have consequences. Start with read-only access, watch the results, and add write permission only when you trust the work.</p>
+
+<h3>What is tool use in AI?</h3>
+
+<p>Tool use is an AI's ability to call other software to finish a task, instead of only writing text about it. An AI without tool use can describe how to add an event to your calendar. An AI with tool use, connected through MCP, can add it.</p>
+
+<h2>What to do next</h2>
+
+<p>You do not need to understand every layer of MCP to benefit from it. You need to know which repetitive tasks take up your team's time. Start with one task that moves information between two places: copying from one app into another, pulling data to draft a message, or checking one system before updating another. That is where a connected AI earns its place.</p>
+
+<p>Tell us which task you want AI to take on first. <a href="../../contact/">Contact us here</a> and we will help you find the right starting point.</p>
+
+<h2>Sources</h2>
+
+<ol>
+ <li>Model Context Protocol, "What is the Model Context Protocol (MCP)?"</li>
+ <li>Wikipedia, "Model Context Protocol."</li>
+</ol>
+  </div>
+
+    <div class="post-cta">
+      <h2 style="margin-top:0">What business problem do you want AI to solve?</h2>
+      <p>Tell us in a sentence or two. We read every message and reply with a practical first move.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../contact/">Tell us your problem</a>
+        <a class="btn btn-ghost" href="../../spell-check/">Try our AI spell check</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../about/">About Us</a></li>
+      <li><a href="../../contact/">Contact Us</a></li>
+      <li><a href="../../privacy/">Privacy Policy</a></li>
+      <li><a href="../../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
