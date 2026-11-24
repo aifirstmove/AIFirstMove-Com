@@ -4,7 +4,7 @@
    who use webmail (Gmail, Outlook.com, Yahoo) can open a new message there, use their
    own email app, or copy the address. Without JavaScript the links stay ordinary
    mailto links.
-   The script also writes the shared header links and footer (see below). */
+   The script also writes the shared header menu and footer (see below). */
 (function () {
   "use strict";
 
@@ -12,13 +12,18 @@
      one place, and placed on every page when it loads. To change a header link, the
      company details, a footer link or a social link, change it here and nowhere else.
      Each page still carries a plain header and footer in its own HTML, which is what a
-     visitor sees if JavaScript is off. */
+     visitor sees if JavaScript is off.
+     An entry with "items" is a drop-down: on a wide screen its links open under its name;
+     on a phone the whole menu opens from the Menu button and the links are listed under
+     the name. To add a page, add one line to NAV or to a drop-down's items. */
   var NAV = [
     { name: "Home", path: "" },
     { name: "Blog", path: "blog/" },
-    { name: "Glossary", path: "glossary/" },
-    { name: "Spell Check", path: "spell-check/" },
-    { name: "Wallet Passes", path: "wallet-passes/" }
+    { name: "Guides", items: [
+      { name: "Glossary", path: "glossary/" },
+      { name: "Spell Check", path: "spell-check/" },
+      { name: "Wallet Passes", path: "wallet-passes/" }
+    ] }
   ];
   var FOOT_LINKS = [
     { name: "About Us", path: "about/" },
@@ -43,17 +48,112 @@
   function pathOf(href) { var a = document.createElement("a"); a.href = href; return a.pathname.replace(/index\.html$/, ""); }
   var here = location.pathname.replace(/index\.html$/, "");
 
+  var BARS = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" ' +
+    'stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var CARET = '<svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4"/></svg>';
+
+  function navLink(entry) {
+    var a = document.createElement("a");
+    a.href = to(entry.path);
+    a.textContent = entry.name;
+    var target = pathOf(a.href);
+    if (entry.path === "" ? here === target : here.indexOf(target) === 0) a.setAttribute("aria-current", "page");
+    return a;
+  }
+
+  var page = document.documentElement;
   var nav = document.querySelector(".site-header .nav");
+  var toggle = null;
+  var groups = [];
+  var phone = window.matchMedia ? window.matchMedia("(max-width: 760px)") : null;
+
+  function closeGroups(except) {
+    for (var g = 0; g < groups.length; g++) {
+      if (groups[g] === except) continue;
+      groups[g].box.classList.remove("is-open");
+      if (!(phone && phone.matches)) groups[g].btn.setAttribute("aria-expanded", "false");
+    }
+  }
+  function setNav(open) {
+    page.classList.toggle("nav-open", open);
+    if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  /* On a phone a drop-down's links are always listed, so its name is a label, not a button. */
+  function fitGroups() {
+    var small = !!(phone && phone.matches);
+    for (var g = 0; g < groups.length; g++) {
+      groups[g].box.classList.remove("is-open");
+      groups[g].btn.setAttribute("aria-expanded", small ? "true" : "false");
+      if (small) groups[g].btn.setAttribute("tabindex", "-1"); else groups[g].btn.removeAttribute("tabindex");
+    }
+    if (!small) setNav(false);
+  }
+
   if (nav) {
     nav.textContent = "";
+    nav.id = nav.id || "site-nav";
     for (var n = 0; n < NAV.length; n++) {
-      var navLink = document.createElement("a");
-      navLink.href = to(NAV[n].path);
-      navLink.textContent = NAV[n].name;
-      var target = pathOf(navLink.href);
-      if (NAV[n].path === "" ? here === target : here.indexOf(target) === 0) navLink.setAttribute("aria-current", "page");
-      nav.appendChild(navLink);
+      if (!NAV[n].items) { nav.appendChild(navLink(NAV[n])); continue; }
+      var box = document.createElement("div");
+      box.className = "nav-group";
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "nav-group-btn";
+      btn.innerHTML = "<span></span>" + CARET;
+      btn.firstChild.textContent = NAV[n].name;
+      var sub = document.createElement("div");
+      sub.className = "nav-sub";
+      sub.id = "site-nav-" + n;
+      btn.setAttribute("aria-controls", sub.id);
+      for (var k = 0; k < NAV[n].items.length; k++) {
+        var subLink = navLink(NAV[n].items[k]);
+        if (subLink.getAttribute("aria-current")) btn.classList.add("is-current");
+        sub.appendChild(subLink);
+      }
+      box.appendChild(btn);
+      box.appendChild(sub);
+      nav.appendChild(box);
+      groups.push({ box: box, btn: btn });
     }
+    for (var b = 0; b < groups.length; b++) {
+      (function (group) {
+        group.btn.addEventListener("click", function () {
+          if (phone && phone.matches) return;
+          var open = !group.box.classList.contains("is-open");
+          closeGroups(group);
+          group.box.classList.toggle("is-open", open);
+          group.btn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      })(groups[b]);
+    }
+
+    toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-toggle";
+    toggle.innerHTML = BARS + "<span>Menu</span>";
+    toggle.setAttribute("aria-controls", nav.id);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.addEventListener("click", function () { setNav(!page.classList.contains("nav-open")); });
+    nav.parentNode.insertBefore(toggle, nav);
+
+    page.classList.add("has-menu");
+    fitGroups();
+    if (phone) {
+      if (phone.addEventListener) phone.addEventListener("change", fitGroups);
+      else if (phone.addListener) phone.addListener(fitGroups);
+    }
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target)) closeGroups(null);
+      if (page.classList.contains("nav-open") && !nav.contains(e.target) && !toggle.contains(e.target)) setNav(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      for (var g = 0; g < groups.length; g++) {
+        if (groups[g].box.classList.contains("is-open")) { closeGroups(null); groups[g].btn.focus(); return; }
+      }
+      if (page.classList.contains("nav-open")) { setNav(false); toggle.focus(); }
+    });
   }
 
   var foot = document.querySelector(".site-footer .wrap");
