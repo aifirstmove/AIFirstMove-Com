@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why the same AI model acts differently in different products: the harness explained | AI First Move</title>
+<meta name="description" content="Two products can run the same AI model and behave very differently. The harness around the model explains why, and what to check before you buy.">
+<link rel="canonical" href="https://aifirstmove.com/blog/why-the-same-ai-acts-differently/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why the same AI model acts differently in different products: the harness explained">
+<meta property="og:description" content="Two products can run the same AI model and behave very differently. The harness around the model explains why, and what to check before you buy.">
+<meta property="og:url" content="https://aifirstmove.com/blog/why-the-same-ai-acts-differently/">
+<meta property="og:image" content="https://aifirstmove.com/assets/blog/why-the-same-ai-acts-differently.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why the same AI model acts differently in different products: the harness explained", "description": "Two products can run the same AI model and behave very differently. The harness around the model explains why, and what to check before you buy.", "image": "https://aifirstmove.com/assets/blog/why-the-same-ai-acts-differently.png", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "AI First Move", "url": "https://aifirstmove.com/"}, "publisher": {"@type": "Organization", "name": "AI First Move", "logo": {"@type": "ImageObject", "url": "https://aifirstmove.com/assets/logo.png"}}, "mainEntityOfPage": "https://aifirstmove.com/blog/why-the-same-ai-acts-differently/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="AI First Move home">
+      <img src="../../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../blog/" aria-current="page">Blog</a>
+      <a href="../../glossary/">Glossary</a>
+      <a href="../../spell-check/">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article>
+  <div class="wrap post-head">
+    <h1>Why the same AI model acts differently in different products: the harness explained</h1>
+    <p class="post-meta">By AI First Move · <time datetime="2026-11-23">November 23, 2026</time> · <a href="../../blog/">All articles</a></p>
+    <img class="post-hero" src="../../assets/blog/why-the-same-ai-acts-differently.png" alt="Two identical cordless drills on a workbench, each beside a different set of bits and attachments" width="1536" height="864">
+  </div>
+  <div class="wrap post-body">
+<p>Two products can run on the exact same <a class="term" href="../../glossary/#model">AI model</a> and behave so differently that you would swear they were built on different technology. The reason is the <a class="term" href="../../glossary/#harness">harness</a>: the layer of instructions, tools, memory rules and permissions that wraps around the model before it ever sees your question. Same engine, very different car. This guide breaks down each part of that harness so you know what to compare when you choose an AI tool for your business.</p>
+
+<h2>Key takeaways</h2>
+
+<ul>
+ <li>The model is the engine. The harness is everything else, and the harness is what makes two products built on the same model feel completely different.</li>
+ <li>When comparing AI tools, ask what the tool can access, what it asks permission for, what it remembers and what it does with your data.</li>
+ <li>A restrictive harness can make a strong model feel weak. A well-designed harness can make a mid-tier model feel capable.</li>
+ <li>You do not need to understand how models are trained. You need to understand how the harness is set up, because the vendor controls that.</li>
+ <li>Use the checklist in this article before signing any AI software contract, since harness details are not always volunteered up front.</li>
+</ul>
+
+<h2>What is a harness, and why does it matter for your business?</h2>
+
+<p>Think of a car. Two sedans can share the same engine but drive completely differently, depending on the suspension, the steering, the braking system and how the dashboard is laid out. The <strong>model</strong> is that shared engine: the core AI that generates language, spots patterns and reasons through problems. The <strong>harness</strong> is everything bolted around it: the rules it must follow, the tools it can call, the data it can see and the guardrails it cannot cross.</p>
+
+<p>When a software vendor says "we're built on a GPT model" or "we use Claude," they are telling you about the engine. They are not telling you much about the car. For a business buyer, the car is what matters.</p>
+
+<h2>1. System instructions: the AI's standing orders</h2>
+
+<p>System instructions are written directives that the vendor gives the model before you type a single word. You usually cannot see them, although some vendors publish theirs. They still shape every answer you get.</p>
+
+<p>A legal tech product might instruct the model never to give legal advice and always to recommend a licensed attorney. A customer service tool might instruct it to stay on-brand, never apologize more than once and always offer a refund link. Same underlying model, completely different behavior. Those instructions are the vendor's fingerprint on the product.</p>
+
+<p>What to ask your vendor: <em>Can I see or customize the system instructions?</em> Some tools let you add your own. Many do not.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Fixed system instructions</td>
+  <td>Consistent, predictable behavior; the vendor takes responsibility for guardrails</td>
+  <td>Cannot tailor the AI's personality or rules to your specific business</td>
+ </tr>
+ <tr>
+  <td>Customizable system instructions</td>
+  <td>You shape tone, scope and rules to match your brand</td>
+  <td>Requires effort to write well; poorly written instructions create erratic behavior</td>
+ </tr>
+</table>
+</div>
+
+<h2>2. Tool use: what the AI can actually do beyond talking</h2>
+
+<p><a class="term" href="../../glossary/#tool-use">Tool use</a> is the ability of an AI model to call outside systems such as search engines, databases, calculators, calendars and email during a conversation, rather than only generating text from memory. It is one of the biggest functional differences between AI products, even when they share a model.</p>
+
+<p>One product might let the AI check your inventory system in real time. Another might cut that off and let it work only from information loaded in advance. The raw model can use tools in both cases. The harness decides whether that capability is switched on and which tools are connected.</p>
+
+<p>For a business owner, this is the difference between an AI that can actually book an appointment and one that can only describe how booking works.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Rich tool access</td>
+  <td>The AI can take real actions, not just give advice</td>
+  <td>More potential for mistakes; needs clear permission controls</td>
+ </tr>
+ <tr>
+  <td>No tool access (text only)</td>
+  <td>Lower risk; the AI cannot accidentally modify your data</td>
+  <td>Limited to summarizing and drafting; cannot act on your behalf</td>
+ </tr>
+</table>
+</div>
+
+<h2>3. Memory: what the AI remembers between conversations</h2>
+
+<p>Most AI models have no memory of your previous conversations by default. Each session starts blank. The harness is what adds memory, or does not.</p>
+
+<p>Some products store a summary of past interactions and feed it into every new session. Others remember facts you have told them directly, such as your company name, your preferred tone or your main customers. Some reset completely when you close the window. Same model in all three cases, but the experience differs widely depending on how the harness handles memory.</p>
+
+<p>Short-term memory matters too. Within a single session, the harness controls how much conversation history the model can see at once. If a session runs long, some tools quietly drop the earliest parts. That is why AI sometimes forgets what you said at the start of a long conversation: the harness trimmed the oldest parts of the context to stay within the model's size limit, or to save cost.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Persistent memory across sessions</td>
+  <td>The AI becomes more useful over time; less re-explaining needed</td>
+  <td>Stored data raises privacy questions and needs regular review</td>
+ </tr>
+ <tr>
+  <td>No persistent memory</td>
+  <td>A clean slate each time; no risk of stale or incorrect stored facts</td>
+  <td>You repeat yourself constantly; the AI never learns your preferences</td>
+ </tr>
+</table>
+</div>
+
+<h2>4. Permissions: what the AI is allowed to access</h2>
+
+<p>Permissions define what data the AI can read, write or act on inside your systems. This is a harness setting, not a model capability. The model does not decide what it can touch. The vendor or the administrator does.</p>
+
+<p>A well-designed harness gives the AI read access to what it needs and almost no write access by default. You grant specific write permissions deliberately, one integration at a time. A poorly designed harness hands the AI broad access and assumes the model will limit itself. It will not do so reliably.</p>
+
+<p>Before you connect any AI tool to your business systems, ask specifically: what can this tool read, what can it write and what can it delete? Get the answer in writing.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Granular permission controls</td>
+  <td>You decide exactly what the AI touches; an audit trail is possible</td>
+  <td>Takes time to configure correctly; IT support is often needed</td>
+ </tr>
+ <tr>
+  <td>Broad default permissions</td>
+  <td>Faster to set up; fewer configuration steps</td>
+  <td>Higher risk of unintended data access or accidental changes</td>
+ </tr>
+</table>
+</div>
+
+<h2>5. Context management: what the AI sees when it answers you</h2>
+
+<p>Every time you send a message, the harness assembles a package: your message, relevant memory, relevant documents, tool outputs and conversation history. It sends that package to the model all at once. The package is the <a class="term" href="../../glossary/#context-window">context window</a>. Beyond its general training, the model knows only what is in that package.</p>
+
+<p>How the harness builds and manages the package largely determines how well the AI performs. A product that floods the context with irrelevant documents will produce vague, wandering answers. One that selects exactly the right information before asking the model to respond can seem remarkably accurate, even with an older or cheaper model.</p>
+
+<p>This is where much of the real engineering happens, and it is mostly invisible to the buyer.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Smart context selection</td>
+  <td>Faster, more accurate responses; lower cost per query</td>
+  <td>Harder to audit; you cannot always tell what the AI was shown</td>
+ </tr>
+ <tr>
+  <td>Full context (everything included)</td>
+  <td>Transparent; nothing is filtered out before the model sees it</td>
+  <td>Slower and more expensive; the model may get confused by irrelevant content</td>
+ </tr>
+</table>
+</div>
+
+<h2>6. Error recovery: what happens when the AI gets it wrong</h2>
+
+<p>Models make mistakes. The harness decides what happens next. Some harnesses catch a failed or low-confidence output, try the request again another way and return a better answer before you see anything. Others show the bad answer at once.</p>
+
+<p>Some products add a second review step: after the model drafts an answer, another process checks it against set criteria before it reaches you. That check is a harness function. The model does not add it on its own.</p>
+
+<p>For business use, this matters most where mistakes cost money or erode customer trust. Ask vendors whether their system verifies its own outputs before returning them, and how.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Automated error recovery</td>
+  <td>Higher-quality outputs; fewer bad answers reach your team</td>
+  <td>Slower responses; higher cost per query because of the extra processing</td>
+ </tr>
+ <tr>
+  <td>No built-in error recovery</td>
+  <td>Faster and cheaper; simpler design</td>
+  <td>Your staff catches the mistakes, which adds a manual review burden</td>
+ </tr>
+</table>
+</div>
+
+<h2>7. Output formatting: how the answer is shaped before you see it</h2>
+
+<p>The harness tells the model how to format its answers: bullet points, plain prose, structured data for another program, a table or a numbered list. Left alone, the model can format inconsistently. The harness locks it into whatever the product needs.</p>
+
+<p>This sounds minor, but it is not. If an AI tool feeds its output into a customer record, an invoice template or an email system, consistent formatting is the difference between automation that works and automation that breaks unpredictably. That is a harness setting, not a model capability.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Rigid output formatting</td>
+  <td>Integrates cleanly with other tools; predictable structure</td>
+  <td>Less flexible for open-ended tasks where structure should vary</td>
+ </tr>
+ <tr>
+  <td>Free-form output</td>
+  <td>Better for creative or advisory tasks where tone varies</td>
+  <td>Downstream automation breaks when the format is inconsistent</td>
+ </tr>
+</table>
+</div>
+
+<h2>8. Data handling: what happens to your information after you submit it</h2>
+
+<p>Every message you send passes through the harness before it reaches the model. The harness can anonymize sensitive data before sending it out, log everything for audit, store inputs for model training, or do none of these things. The model does not make those choices. The vendor does.</p>
+
+<p>This is easy to overlook when buying AI tools. Two products built on the same model can have very different data policies, depending on how the harness is built. One might send customer data to a third-party AI provider with no anonymization. Another might keep everything in your own cloud environment.</p>
+
+<p>Read the data processing agreement every time.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Private or on-premises processing</td>
+  <td>Your data stays in your environment; compliance is easier</td>
+  <td>More expensive; requires infrastructure support</td>
+ </tr>
+ <tr>
+  <td>Shared cloud processing</td>
+  <td>Lower cost; maintained by the vendor</td>
+  <td>Requires careful review of data retention and training-use terms</td>
+ </tr>
+</table>
+</div>
+
+<h2>9. Human-in-the-loop controls: where a person stays in charge</h2>
+
+<p>Some harnesses pause and ask for human approval before certain actions, such as sending an email, updating a record or publishing content. Others run end to end without stopping. That choice is a harness design decision, not a model default.</p>
+
+<p>For a small business, keeping people involved in anything customer-facing or financially important is worth the extra step. Fully automated is faster, but fast and wrong is worse than slower and right. A good harness gives you configurable checkpoints, so you decide where the AI acts alone and where it waits for a go-ahead.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Aspect</th>
+  <th>Pros</th>
+  <th>Cons</th>
+ </tr>
+ <tr>
+  <td>Human approval checkpoints</td>
+  <td>Mistakes are caught before they reach customers or systems</td>
+  <td>Slows automation down; requires staff availability</td>
+ </tr>
+ <tr>
+  <td>Fully automated flow</td>
+  <td>Faster throughput; no manual bottleneck</td>
+  <td>Errors spread without review; harder to audit afterwards</td>
+ </tr>
+</table>
+</div>
+
+<h2>How to compare AI tools by their harness: a practical checklist</h2>
+
+<p>Use these questions when you evaluate any AI product. You are not grading the model. You are grading the harness around it.</p>
+
+<ul>
+ <li><strong>What can it access?</strong> Which of your systems, files or databases can it read? Which can it write to or modify?</li>
+ <li><strong>What does it ask permission for?</strong> Does it request approval before acting, or does it act first and report later?</li>
+ <li><strong>What does it remember?</strong> Does memory persist between sessions? Can you view, correct or delete what it stores?</li>
+ <li><strong>What does it do with your data?</strong> Is your input used to train the model? Is it stored, anonymized or processed outside your region?</li>
+ <li><strong>Who wrote the system instructions?</strong> Can you customize them, or are they fixed and undisclosed?</li>
+ <li><strong>How does it handle errors?</strong> Does it verify its own outputs before showing them to you?</li>
+ <li><strong>Where do people stay in control?</strong> Which actions need your sign-off, and which run automatically?</li>
+</ul>
+
+<h2>All nine harness components at a glance</h2>
+
+<p>The table sets the nine parts of the harness against the questions that matter most to a business buyer.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Harness component</th>
+  <th>What it controls</th>
+  <th>Business risk if poorly designed</th>
+  <th>Key question to ask the vendor</th>
+ </tr>
+ <tr>
+  <td>System instructions</td>
+  <td>The AI's personality, rules and scope</td>
+  <td>Off-brand responses; legal exposure</td>
+  <td>Can I customize or view these?</td>
+ </tr>
+ <tr>
+  <td>Tool use</td>
+  <td>Which outside systems the AI can call</td>
+  <td>The AI acts on stale data or cannot take real actions</td>
+  <td>Which integrations are live, and which are read-only?</td>
+ </tr>
+ <tr>
+  <td>Memory</td>
+  <td>What carries over between sessions</td>
+  <td>Constant re-explaining, or outdated stored facts causing errors</td>
+  <td>What is stored, and can I delete it?</td>
+ </tr>
+ <tr>
+  <td>Permissions</td>
+  <td>Read, write and delete access to your data</td>
+  <td>Accidental data changes or deletion</td>
+  <td>What is the default permission level?</td>
+ </tr>
+ <tr>
+  <td>Context management</td>
+  <td>What information the model sees per query</td>
+  <td>Vague answers; the AI seems to forget mid-session</td>
+  <td>How do you decide what goes into each request?</td>
+ </tr>
+ <tr>
+  <td>Error recovery</td>
+  <td>What happens when the AI produces a bad answer</td>
+  <td>Bad outputs reach customers unchecked</td>
+  <td>Does the system verify its own answers before returning them?</td>
+ </tr>
+ <tr>
+  <td>Output formatting</td>
+  <td>How answers are structured</td>
+  <td>Downstream automation breaks; inconsistent outputs</td>
+  <td>Can the output format be locked for our integrations?</td>
+ </tr>
+ <tr>
+  <td>Data handling</td>
+  <td>Storage, anonymization and training use</td>
+  <td>Customer data used to train outside models; compliance failure</td>
+  <td>Is our data used for training, and where is it processed?</td>
+ </tr>
+ <tr>
+  <td>Human-in-the-loop controls</td>
+  <td>Where approval is required before the AI acts</td>
+  <td>Automated errors that compound before anyone notices</td>
+  <td>Which actions trigger a human approval step?</td>
+ </tr>
+</table>
+</div>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Does a better model always mean a better product?</h3>
+
+<p>No. A well-engineered harness around a mid-tier model can outperform a poorly designed harness around a stronger one. For many business uses, the harness shapes your day-to-day experience more than the model version does.</p>
+
+<h3>Can I build my own harness instead of buying a product?</h3>
+
+<p>Yes, using developer frameworks or by building directly on an AI provider's developer interface (API). That path needs a developer and ongoing maintenance. For most small businesses, buying a product with a good harness is the faster and more practical start. Build your own only when no existing product fits your workflow.</p>
+
+<h3>How do I know whether a vendor's harness handles my data responsibly?</h3>
+
+<p>Ask for the data processing agreement in writing before you sign anything. Look for whether your data is used for model training, where it is stored and how long it is kept after your contract ends. If a vendor will not provide a data processing agreement, that is your answer.</p>
+
+<h3>What is the difference between prompt engineering and the harness?</h3>
+
+<p>Prompt engineering is what you type to get a better answer. It works at the message level. The harness works at the system level, before and around your message. You control your prompts. The vendor controls the harness. Both matter, but the harness limits what your prompts can achieve.</p>
+
+<h2>What this means for your next AI purchase</h2>
+
+<p>Do not stop at asking which AI model a product uses. Ask how the harness is built. Two vendors can both say they use the same model and deliver completely different products, one frustrating and risky, one useful. The model name tells you only part of the story about day-to-day performance. The harness tells you much of the rest.</p>
+
+<p>Use the checklist above and ask the questions before you sign. Pay particular attention to data handling and permissions, because problems in those two areas can be expensive to undo.</p>
+
+<p>If you are not sure where to start, pick the most repetitive task your team does each week, map out exactly what data it touches and use that as your test case when you evaluate tools.</p>
+
+<p><strong>What business problem would you like AI to solve?</strong> <a href="../../contact/">Tell the team at AI First Move</a>, and we will help you work out what to look for.</p>
+  </div>
+
+    <div class="post-cta">
+      <h2 style="margin-top:0">What business problem do you want AI to solve?</h2>
+      <p>Tell us in a sentence or two. We read every message and reply with a practical first move.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../contact/">Tell us your problem</a>
+        <a class="btn btn-ghost" href="../../spell-check/">Try our AI spell check</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../about/">About Us</a></li>
+      <li><a href="../../contact/">Contact Us</a></li>
+      <li><a href="../../privacy/">Privacy Policy</a></li>
+      <li><a href="../../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
