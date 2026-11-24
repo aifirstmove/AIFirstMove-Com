@@ -22,7 +22,8 @@
     { name: "Guides", items: [
       { name: "Glossary", path: "glossary/" },
       { name: "Spell Check", path: "spell-check/" },
-      { name: "Wallet Passes", path: "wallet-passes/" }
+      { name: "Wallet Passes", path: "wallet-passes/" },
+      { name: "AI Video", path: "ai-video/" }
     ] }
   ];
   var FOOT_LINKS = [
