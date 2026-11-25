@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI teams: what happens when one AI agent hands work to another | AI First Move</title>
+<meta name="description" content="When one AI agent hands work to helper agents, big jobs get done in pieces. What subagents and orchestration mean, what can go wrong, and where a person checks.">
+<link rel="canonical" href="https://aifirstmove.com/blog/ai-agents-working-together/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI teams: what happens when one AI agent hands work to another">
+<meta property="og:description" content="When one AI agent hands work to helper agents, big jobs get done in pieces. What subagents and orchestration mean, what can go wrong, and where a person checks.">
+<meta property="og:url" content="https://aifirstmove.com/blog/ai-agents-working-together/">
+<meta property="og:image" content="https://aifirstmove.com/assets/blog/ai-agents-working-together.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI teams: what happens when one AI agent hands work to another", "description": "When one AI agent hands work to helper agents, big jobs get done in pieces. What subagents and orchestration mean, what can go wrong, and where a person checks.", "image": "https://aifirstmove.com/assets/blog/ai-agents-working-together.png", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "AI First Move", "url": "https://aifirstmove.com/"}, "publisher": {"@type": "Organization", "name": "AI First Move", "logo": {"@type": "ImageObject", "url": "https://aifirstmove.com/assets/logo.png"}}, "mainEntityOfPage": "https://aifirstmove.com/blog/ai-agents-working-together/"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" aria-label="AI First Move home">
+      <img src="../../assets/logo.png" alt="" width="46" height="49">
+      <span>AI First Move</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../">Home</a>
+      <a href="../../blog/" aria-current="page">Blog</a>
+      <a href="../../glossary/">Glossary</a>
+      <a href="../../spell-check/">Spell Check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article>
+  <div class="wrap post-head">
+    <h1>AI teams: what happens when one AI agent hands work to another</h1>
+    <p class="post-meta">By AI First Move · <time datetime="2026-11-24">November 24, 2026</time> · <a href="../../blog/">All articles</a></p>
+    <img class="post-hero" src="../../assets/blog/ai-agents-working-together.png" alt="A head chef at the pass of a restaurant kitchen handing a pan to a line cook while two other cooks work at their stations" width="1536" height="864">
+  </div>
+  <div class="wrap post-body">
+<p>When one <a class="term" href="../../glossary/#ai-agent">AI agent</a> hands work to another, it's splitting a big job into smaller pieces and giving each piece to a helper set up for that task. The main agent stays in charge of the overall goal. The helpers, called <a class="term" href="../../glossary/#subagent">subagents</a>, each do their part and report back. You end up with a team of AI workers finishing one larger job together.</p>
+
+<h2>Key takeaways</h2>
+
+<ul>
+ <li>An AI agent is an AI that takes actions toward a goal, not just one that answers questions. A subagent is a helper agent that handles one piece of a larger job and reports back to the main agent.</li>
+ <li><a class="term" href="../../glossary/#orchestration">Orchestration</a> is coordinating several AI agents, tools and steps so they finish one larger job in the right order, without you managing each step by hand.</li>
+ <li>Running more subagents means more AI usage on your bill and more outputs you need to check. A bigger team isn't automatically better.</li>
+ <li>A <a class="term" href="../../glossary/#human-in-the-loop">human in the loop</a>, meaning a real person reviews or approves the work at a set point, is one of the most important safeguards when AI agents pass work between themselves.</li>
+ <li>For many small businesses, a single well set up AI agent can handle more than people expect. Teams of agents make sense only when one agent can't do all the steps.</li>
+</ul>
+
+<h2>What is an AI agent, exactly?</h2>
+
+<p>An AI agent is an AI that can take actions toward a goal, not just answer a question. Ask a standard AI chat tool "write me a sales email" and it answers. An AI agent goes further: it can search your customer list, draft the email, check your calendar and schedule the send, without you directing each move.</p>
+
+<p>That's a meaningful difference. Standard AI chat is a conversation. An AI agent is more like a worker you've given a task. You still need to check the work, but you're not running every step yourself. Our post <a href="../what-is-an-ai-agent/">What is an AI agent, and does your small business need one?</a> covers the basics.</p>
+
+<h2>What is a subagent?</h2>
+
+<p>A subagent is a helper AI that a main agent hands part of a job to. The subagent does its piece and reports back. Think of the main agent as a project manager and the subagents as specialists brought in for specific tasks.</p>
+
+<p>Say you want an AI team to handle new customer inquiries. The main agent receives the inquiry and decides what's needed. It hands the research to one subagent, the draft reply to another, and the scheduling of a follow-up to a third. Each subagent works on its own piece, and the main agent pulls the pieces together.</p>
+
+<p>More subagents also means more usage on your bill and more outputs to check. That's not a reason to avoid them, but it is a reason to add them only when there's a real need.</p>
+
+<h2>What is orchestration?</h2>
+
+<p>Orchestration is coordinating several AI agents, tools or steps so they finish one larger job in the right order. Without it, each agent would work blind, possibly repeating tasks or producing results that contradict each other.</p>
+
+<p>Good orchestration keeps the background moving from one step to the next. Each agent needs enough background to do its job well. That background is called <a class="term" href="../../glossary/#context">context</a>, and there's a limit to how much any AI can hold at once, called its <a class="term" href="../../glossary/#context-window">context window</a>. When a job is long and complex, keeping the context intact across several handoffs is one of the harder problems in setting up an AI team. Our post on <a href="../why-ai-forgets-context-window/">why AI forgets what you told it</a> explains the limit in plain English.</p>
+
+<h2>How does the handoff actually work?</h2>
+
+<p>The main agent passes a summary, instructions or part-finished work to the next agent. That agent picks up from there. It doesn't see everything that came before. It reads what was passed to it.</p>
+
+<p>This is where things can go sideways. If the first agent made an error, such as a <a class="term" href="../../glossary/#hallucination">hallucination</a>, where it stated something that isn't true, the next agent may treat that error as fact and build on it. Problems compound. By the time you see the final output, the original mistake can be buried several layers deep.</p>
+
+<p>Reading only the final result isn't enough. You need checkpoints.</p>
+
+<h3>What "human in the loop" means for your business</h3>
+
+<p>Human in the loop means a real person reviews or approves work at a set point before the job moves forward. You don't have to approve every small step, which would defeat the purpose. But set clear checkpoints, especially before anything goes to a customer, and don't drop them too early.</p>
+
+<p>Start with more checkpoints, not fewer. As you see where your AI team gets things right consistently, you can pull back. Not before.</p>
+
+<h2>Single agent or AI team: when does each make sense?</h2>
+
+<p>Before adding subagents to a job, it's worth asking whether you need them. The table below sets out the main differences to help you decide.</p>
+
+<div class="table-scroll">
+<table>
+ <tr>
+  <th>Setup</th>
+  <th>Best for</th>
+  <th>Main advantage</th>
+  <th>Main risk</th>
+ </tr>
+ <tr>
+  <td>Single AI agent</td>
+  <td>Tasks with one clear goal and a defined set of steps</td>
+  <td>Simpler to set up, easier to review, lower usage cost</td>
+  <td>Can struggle with long jobs that need several different kinds of work in a row</td>
+ </tr>
+ <tr>
+  <td>AI team (orchestration)</td>
+  <td>Complex jobs where separate specialists handle separate steps</td>
+  <td>Each subagent focuses on one piece, and the main agent coordinates</td>
+  <td>More usage cost, more outputs to check, errors can compound across handoffs</td>
+ </tr>
+</table>
+</div>
+
+<p>For many small businesses starting out, a single well set up agent can handle more than you'd expect. A team of agents makes sense when you've already proven the single-agent version and hit a real limit.</p>
+
+<h2>What can go wrong in an AI team?</h2>
+
+<p>Four problems can come up, and you should know them before you set anything up.</p>
+
+<ul>
+ <li><strong>Compounding hallucinations:</strong> One agent states something incorrect, and the next agent treats it as fact. The final output looks confident and coherent but contains errors that trace back to the first handoff.</li>
+ <li><strong>Context loss:</strong> As jobs pass between agents, the original instructions or their finer points can get trimmed. A subagent working on step four may not fully understand why step one was done a certain way.</li>
+ <li><strong>Bill creep:</strong> Every agent running every step adds usage. A team of five agents on a job that one agent could have handled means you're paying for complexity you didn't need.</li>
+ <li><strong>No clear owner:</strong> When the output is wrong and three agents were involved, it's harder to find where things went off track. Put your checkpoints at the handoff points, not just at the final output.</li>
+</ul>
+
+<h2>What does good oversight look like in practice?</h2>
+
+<p>You don't need to be technical to do this well. Pick the job you want an AI team to handle. Write down every step in plain language, in the order they need to happen. Mark the two or three points where a wrong output would cause the most damage. Those are your checkpoints, and that's where a person reviews the work.</p>
+
+<p>Checking early and often catches problems cheaply. If you only review the finished job, errors travel a long way before you spot them.</p>
+
+<p>Read every output at your checkpoints with fresh eyes, not just a quick scan. Ask: does this make sense? Does it match what I know to be true? Could a customer be misled by this?</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Do AI agents talk to each other directly?</h3>
+
+<p>Sometimes. In many setups they pass information through the system that coordinates them. Either way, it's less like a conversation and more like handing over a document with notes attached. The receiving agent reads what was passed and continues from there.</p>
+
+<h3>Can my business use an AI team right now?</h3>
+
+<p>You can, but start smaller than you think you need to. A single AI agent handling one repeatable task well tells you far more than an ambitious multi-agent setup that's hard to troubleshoot. Build up once you've seen how the simpler version performs.</p>
+
+<h3>What's the biggest mistake businesses make with AI teams?</h3>
+
+<p>Removing human review too soon. The appeal of automation is that it runs without you. The risk is that it fails without you noticing. Keep checkpoints until you have a track record, not a hunch, that the outputs are reliable.</p>
+
+<h3>Does using more subagents make the result more accurate?</h3>
+
+<p>Not automatically. More agents means more steps where something can go wrong. Accuracy depends on how clearly each agent's task is defined and how well the handoffs carry the context forward. A smaller, well-designed team can do better than a larger, loosely set up one.</p>
+
+<h3>What's a token, and why does it affect the bill?</h3>
+
+<p>A <a class="term" href="../../glossary/#token">token</a> is roughly a word or part of a word. It's the unit AI systems use to measure how much text they're processing. Longer jobs with more context use more tokens, which is why a job spread across several agents costs more to run than a simple single-step task.</p>
+
+<h2>Where to go from here</h2>
+
+<p>AI teams aren't the right starting point for many businesses. Start with one task, one agent, one clear goal. See where it works and where it doesn't. That evidence tells you whether adding a second agent, a real subagent with a specific job, is worth the added complexity and cost.</p>
+
+<p>When you do add agents, treat every handoff point as a risk. Put a human review there. Build the habit before you build the team.</p>
+
+<p><strong>What business problem are you trying to solve with AI?</strong> <a href="../../contact/">Tell the team at AI First Move</a> about the task that's costing you the most time or causing the most headaches. That's the right place to start.</p>
+  </div>
+
+    <div class="post-cta">
+      <h2 style="margin-top:0">What business problem do you want AI to solve?</h2>
+      <p>Tell us in a sentence or two. We read every message and reply with a practical first move.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../contact/">Tell us your problem</a>
+        <a class="btn btn-ghost" href="../../spell-check/">Try our AI spell check</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>AI First Move</strong>
+      <address>
+        A DBA of Effinsoftware.com INC<br>
+        2232 Dell Range Blvd, Suite 245-3069<br>
+        Cheyenne, WY 82009<br>
+        <a href="mailto:info@aifirstmove.com">info@aifirstmove.com</a>
+      </address>
+    </div>
+    <ul class="foot-links">
+      <li><a href="../../about/">About Us</a></li>
+      <li><a href="../../contact/">Contact Us</a></li>
+      <li><a href="../../privacy/">Privacy Policy</a></li>
+      <li><a href="../../terms/">Terms of Service</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Effinsoftware.com INC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
