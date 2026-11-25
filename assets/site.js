@@ -23,7 +23,8 @@
       { name: "Glossary", path: "glossary/" },
       { name: "Spell Check", path: "spell-check/" },
       { name: "Wallet Passes", path: "wallet-passes/" },
-      { name: "AI Video", path: "ai-video/" }
+      { name: "AI Video", path: "ai-video/" },
+      { name: "Chatbots", path: "chatbots/" }
     ] }
   ];
   var FOOT_LINKS = [
